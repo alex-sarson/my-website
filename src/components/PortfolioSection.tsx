@@ -6,7 +6,7 @@ import Me from "../images/me.png"
 const PortfolioSection = () => {
   const tiles = [
     {
-      title: "Project 1",
+      title: "Projects",
       link: "",
       image: { Me },
       excerpt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus asperiores obcaecati facere repudiandae aliquam soluta. Natus nulla cumque veniam minus."
