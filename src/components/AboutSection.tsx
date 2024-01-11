@@ -14,7 +14,7 @@ const AboutSection = () => {
     {
       title: "Resume",
       link: "",
-      image: {},
+      image: { Me },
       excerpt: "After graduating with an Architecture degree, I decided that a career in Tech was more suited for me."
     }
   ]

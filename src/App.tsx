@@ -1,14 +1,15 @@
-import { styled } from 'styled-components';
 import './App.css';
 import Layout from './components/Layout';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
+import PortfolioSection from './components/PortfolioSection';
 
 function App() {
   return (
     <Layout>
       <Hero />
       <AboutSection />
+      <PortfolioSection />
     </Layout>
   );
 }
