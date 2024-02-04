@@ -1,23 +1,25 @@
-import styled from "styled-components"
-import Section from "./Section"
-import Me from "../images/me.png"
-import Tile from "./Tile"
+import styled from 'styled-components';
+import Section from './Section';
+import Me from '../images/me.png';
+import Tile from './Tile';
 
-const AboutSection = () => {
+const AboutSection: React.FC = () => {
   const tiles = [
     {
-      title: "Bio",
-      link: "",
+      title: 'Bio',
+      link: '/bio',
       image: { Me },
-      excerpt: "I've been coding for ** years now. Click here for a little bit more about me."
+      excerpt:
+        "I've been coding for ** years now. Click here for a little bit more about me.",
     },
     {
-      title: "Resume",
-      link: "",
+      title: 'Resume',
+      link: '/bio',
       image: { Me },
-      excerpt: "After graduating with an Architecture degree, I decided that a career in Tech was more suited for me."
-    }
-  ]
+      excerpt:
+        'After graduating with an Architecture degree, I decided that a career in Tech was more suited for me.',
+    },
+  ];
 
   console.log(tiles);
 
@@ -38,8 +40,8 @@ const AboutSection = () => {
         ))}
       </div>
     </Section>
-  )
-}
+  );
+};
 
 const HeaderContainer = styled.div`
   margin: 24px;
@@ -47,7 +49,7 @@ const HeaderContainer = styled.div`
   h2 {
     margin: 0;
   }
-`
+`;
 
 // const Tile = styled.div`
 //   background-color: var(--surface-container);
@@ -68,4 +70,4 @@ const HeaderContainer = styled.div`
 //   }
 // `
 
-export default AboutSection
+export default AboutSection;

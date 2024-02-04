@@ -1,24 +1,25 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <Container>
       <Background>
         <h1>Hello</h1>
-        <p>I'm Alex Sarson, a self taught Web Developer based
-          in London, UK.<br />I love learning new things, solving problems and
-          creating beautiful websites!</p>
-        {/* <img src={Me} alt="Me" /> */}
+        <p>
+          I'm Alex Sarson, a self taught Web Developer based in London, UK.
+          <br />I love learning new things, solving problems and creating
+          beautiful websites!
+        </p>
       </Background>
-    </Container >
-  )
-}
+    </Container>
+  );
+};
 
 const Container = styled.div`
   width: 100%;
   max-width: 1760px;
   margin: 0 auto;
-`
+`;
 
 const Background = styled.div`
   /* width: 100%; */
@@ -58,6 +59,6 @@ const Background = styled.div`
       top: 0;
     }
   }
-`
+`;
 
-export default Hero
+export default Hero;

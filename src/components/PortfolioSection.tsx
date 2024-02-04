@@ -1,23 +1,25 @@
-import styled from "styled-components"
-import Section from "./Section"
-import Tile from "./Tile"
-import Me from "../images/me.png"
+import styled from 'styled-components';
+import Section from './Section';
+import Tile from './Tile';
+import Me from '../images/me.png';
 
-const PortfolioSection = () => {
+const PortfolioSection: React.FC = () => {
   const tiles = [
     {
-      title: "Projects",
-      link: "",
+      title: 'Projects',
+      link: '/bio',
       image: { Me },
-      excerpt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus asperiores obcaecati facere repudiandae aliquam soluta. Natus nulla cumque veniam minus."
+      excerpt:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus asperiores obcaecati facere repudiandae aliquam soluta. Natus nulla cumque veniam minus.',
     },
     {
-      title: "Project 2",
-      link: "",
+      title: 'Project 2',
+      link: '/bio',
       image: { Me },
-      excerpt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptate ad quae debitis, perferendis impedit distinctio quibusdam possimus earum aliquid!"
-    }
-  ]
+      excerpt:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptate ad quae debitis, perferendis impedit distinctio quibusdam possimus earum aliquid!',
+    },
+  ];
 
   return (
     <Section>
@@ -36,8 +38,8 @@ const PortfolioSection = () => {
         ))}
       </div>
     </Section>
-  )
-}
+  );
+};
 
 const HeaderContainer = styled.div`
   margin: 24px;
@@ -45,6 +47,6 @@ const HeaderContainer = styled.div`
   h2 {
     margin: 0;
   }
-`
+`;
 
-export default PortfolioSection
+export default PortfolioSection;

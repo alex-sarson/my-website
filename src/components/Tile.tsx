@@ -1,16 +1,15 @@
-import styled from "styled-components"
+import { Link } from 'react-router-dom';
 
 interface TileProps {
   excerpt: string;
   image: string | undefined;
-  key: string;
   link: string;
   title: string;
 }
 
-const Tile: React.FC<TileProps> = ({ excerpt, image, key, link, title }) => {
+const Tile: React.FC<TileProps> = ({ excerpt, image, link, title }) => {
   return (
-    <Surface key={key} href={link}>
+    <Link to={link} className="tile-surface">
       <div className="tile-top">
         <img src={image} alt={`${title} Image`} />
       </div>
@@ -18,41 +17,8 @@ const Tile: React.FC<TileProps> = ({ excerpt, image, key, link, title }) => {
         <h3>{title}</h3>
         <p>{excerpt}</p>
       </div>
-    </Surface>
-  )
-}
+    </Link>
+  );
+};
 
-const Surface = styled.a`
-  background-color: var(--surface-container);
-  border-radius: var(--tile-border-radius);
-  color: var(--surface-text);
-  transition: color 0.2s ease-out, 
-              background-color 0.2s ease-out,
-              border-radius 0.2s ease-out;
-  overflow: hidden;
-
-  &:hover,
-  &:active {
-    color: var(--surface-text);
-    background-color: var(--surface-container-hover);
-  }
-
-  &:active {
-    border-radius: var(--tile-border-radius-active);
-  }
-
-  .tile-top {
-    width: 100%;
-    height: 200px;
-    border-radius: var(--tile-border-radius);
-    overflow: hidden;
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  }
-`
-
-export default Tile
+export default Tile;
