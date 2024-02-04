@@ -6,21 +6,14 @@
   color-scheme: light dark;
   color: var(--surface-text);
   background-color: var(--surface);
-  /* background: linear-gradient(to top, #471f66, transparent) no-repeat; */
-
-  /* Content max width should be 60 characters */
-
-  --dark-grey: #1a321f;
-  --dull-text: #9a9a9a;
-  --blue-line-stroke: #00eeff;
-  --blue-line-filter: drop-shadow(0 0 0.2rem cyan) drop-shadow(0 0 0.2rem cyan) drop-shadow(0 0 1rem #1100ffcb) drop-shadow(0 0 0.4rem #1100ff) drop-shadow(0 0 2rem #1100ff90);
-  --blue-radial-filter: drop-shadow(0 0 0.2rem #00eeff) drop-shadow(0 0 0.5rem #00eeff) drop-shadow(0 0 1rem #1100ffcb) drop-shadow(0 0 1.5rem #1100ff) drop-shadow(0 0 2rem #1100ff90);
 
   --surface: #141218;
   --surface-container: #211f26;
+  --surface-container-hover: #007744;
 
   --surface-text: #e2dce5;
   --surface-container-text: #e6e0e9;
+  --surface-container-text-hover: #c2ffd3;
 
   --display-xl-font-size: 88px;
   --display-l-font-size: 57px;
@@ -28,6 +21,7 @@
   --display-s-font-size: 24px;
 
   --tile-border-radius: 24px;
+  --tile-border-radius-active: 48px;
   --tile-bottom-padding: 24px;
 
   --tile-grid-min-row-height: 320px;

@@ -4,12 +4,13 @@ interface TileProps {
   excerpt: string;
   image: string | undefined;
   key: string;
+  link: string;
   title: string;
 }
 
-const Tile: React.FC<TileProps> = ({ excerpt, image, key, title }) => {
+const Tile: React.FC<TileProps> = ({ excerpt, image, key, link, title }) => {
   return (
-    <Surface key={key}>
+    <Surface key={key} href={link}>
       <div className="tile-top">
         <img src={image} alt={`${title} Image`} />
       </div>
@@ -21,14 +22,28 @@ const Tile: React.FC<TileProps> = ({ excerpt, image, key, title }) => {
   )
 }
 
-const Surface = styled.div`
+const Surface = styled.a`
   background-color: var(--surface-container);
   border-radius: var(--tile-border-radius);
+  color: var(--surface-text);
+  transition: color 0.2s ease-out, 
+              background-color 0.2s ease-out,
+              border-radius 0.2s ease-out;
+  overflow: hidden;
 
-  .tile-top{
+  &:hover,
+  &:active {
+    color: var(--surface-text);
+    background-color: var(--surface-container-hover);
+  }
+
+  &:active {
+    border-radius: var(--tile-border-radius-active);
+  }
+
+  .tile-top {
     width: 100%;
     height: 200px;
-    background-color: pink;
     border-radius: var(--tile-border-radius);
     overflow: hidden;
 

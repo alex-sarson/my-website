@@ -32,6 +32,7 @@ const AboutSection = () => {
             excerpt={tile.excerpt}
             image={tile.image.Me}
             key={`tile${i}`}
+            link={tile.link}
             title={tile.title}
           />
         ))}
