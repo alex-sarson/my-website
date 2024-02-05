@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+const Hero: React.FC<HeroProps> = ({ title, children }) => {
   return (
     <Container>
       <Background>
-        <h1>Hello</h1>
-        <p>
-          I'm Alex Sarson, a self taught Web Developer based in London, UK.
-          <br />I love learning new things, solving problems and creating
-          beautiful websites!
-        </p>
+        <h1>{title}</h1>
+        <p>{children}</p>
       </Background>
     </Container>
   );

@@ -14,7 +14,7 @@ const AboutSection: React.FC = () => {
     },
     {
       title: 'Resume',
-      link: '/bio',
+      link: '/resume',
       image: { Me },
       excerpt:
         'After graduating with an Architecture degree, I decided that a career in Tech was more suited for me.',

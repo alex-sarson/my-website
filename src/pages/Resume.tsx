@@ -1,14 +1,14 @@
 import Hero from '../components/Hero';
 
-const BioPage: React.FC = () => {
+const ResumePage: React.FC = () => {
   return (
     <>
-      <Hero title="Bio">
-        This is the copy for the bio section.
+      <Hero title="Resume">
+        This is the copy for the Resume section.
         <br />I don't really know what to write here yet
       </Hero>
     </>
   );
 };
 
-export default BioPage;
+export default ResumePage;

@@ -2,24 +2,22 @@ import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import PortfolioSection from '../components/PortfolioSection';
 import Socials from '../components/Socials';
-import styled from 'styled-components';
 
 const Home: React.FC = () => {
   return (
     <>
-      <Hero />
-      <Article>
+      <Hero title="Hello">
+        I'm Alex Sarson, a self taught Web Developer based in London, UK.
+        <br />I love learning new things, solving problems and creating
+        beautiful websites!
+      </Hero>
+      <article>
         <AboutSection />
         <PortfolioSection />
         <Socials />
-      </Article>
+      </article>
     </>
   );
 };
-
-const Article = styled.article`
-  max-width: 1200px;
-  margin: 0 auto;
-`;
 
 export default Home;
