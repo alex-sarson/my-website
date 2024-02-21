@@ -7,6 +7,7 @@ https://m3.material.io/
 
 - Bio Page
   - Structure out the article on the single page and use the same structure for the resume page as well
+  - Inspiration: https://m3.material.io/get-started
 - Resume Page (CV)
 - Projects
 - Footer
