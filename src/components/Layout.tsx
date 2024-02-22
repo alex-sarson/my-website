@@ -16,11 +16,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 };
 
 const Page = styled.div`
-  margin: 8px 8px 0 8px;
+  height: 100%;
+  width: 100%;
+  display: flex;
 `;
 
 const Main = styled.main`
-
+  margin: 8px 8px 0 8px;
 `;
 
 export default Layout;

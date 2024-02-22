@@ -31,6 +31,9 @@
   --container-max-width: 1760px;
 
   --margin-center: 0 auto;
+  --margin-section: 96px 0;
+  --margin-article: 24px;
+  --margin-header: 24px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

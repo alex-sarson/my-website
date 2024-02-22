@@ -36,6 +36,7 @@ const ScrollingContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50%;
+  margin: var(--margin-section);
 `;
 
 export default Article;

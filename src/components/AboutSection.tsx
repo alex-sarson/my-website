@@ -44,7 +44,7 @@ const AboutSection: React.FC = () => {
 };
 
 const HeaderContainer = styled.div`
-  margin: 24px;
+  margin: var(--margin-header);
 
   h2 {
     margin: 0;
