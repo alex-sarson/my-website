@@ -10,10 +10,14 @@
   --surface: #141218;
   --surface-container: #211f26;
   --surface-container-hover: #007744;
+  --surface-2: #2d2f31;
+  --surface-2-container-hover: #3e4144;
+  --surface-2-container-active: #007744;
+  --surface-2-container-active-hover: #008c4f;
 
   --surface-text: #e2dce5;
   --surface-container-text: #e6e0e9;
-  --surface-container-text-hover: #c2ffd3;
+  --surface-2-container-text-active: #c2ffd3;
 
   --display-xl-font-size: 88px;
   --display-l-font-size: 57px;
@@ -44,12 +48,8 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--surface-container-text);
   text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -123,7 +123,7 @@ div.tiles-container {
 .tile-surface {
   background-color: var(--surface-container);
   border-radius: var(--tile-border-radius);
-  color: var(--surface-text);
+  color: var(--surface-container-text);
   transition: color 0.2s ease-out, background-color 0.2s ease-out,
     border-radius 0.2s ease-out;
   overflow: hidden;
@@ -132,7 +132,7 @@ div.tiles-container {
 
 .tile-surface:hover,
 .tile-surface:active {
-  color: var(--surface-text);
+  color: var(--surface-container-text);
   background-color: var(--surface-container-hover);
 }
 
