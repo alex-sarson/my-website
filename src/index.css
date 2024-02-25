@@ -1,5 +1,10 @@
+/* 
+  Breakpoints:
+  320 - 960px -- handheld
+  960+ -- desktop   
+*/
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -7,10 +12,12 @@
   color: var(--surface-text);
   background-color: var(--surface);
 
+  --scrim: #14121883;
+
   --surface: #141218;
   --surface-container: #211f26;
   --surface-container-hover: #007744;
-  --surface-2: #2d2f31;
+  --surface-2: #2f2d31;
   --surface-2-container-hover: #3e4144;
   --surface-2-container-active: #007744;
   --surface-2-container-active-hover: #008c4f;
@@ -24,6 +31,8 @@
   --display-m-font-size: 45px;
   --display-s-font-size: 36px;
   --display-xs-font-size: 24px;
+
+  --surface-container-border-radius: 18px;
 
   --tile-border-radius: 24px;
   --tile-border-radius-active: 48px;
@@ -182,6 +191,19 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+button.mobileMenu-button {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  font-size: var(--display-xs-font-size);
+  background-color: transparent;
 }
 
 .flex {
