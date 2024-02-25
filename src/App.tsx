@@ -1,33 +1,13 @@
-import { styled } from 'styled-components';
 import './App.css';
-import Bio from './components/Bio';
-import Header from './components/Header';
-import Resume from './components/Resume';
+import Layout from './components/Layout';
+import AppRouter from './Router';
 
 function App() {
   return (
-    <>
-      <div
-        style={{
-          paddingBottom: '20px',
-          marginBottom: '260px',
-        }}
-      >
-        <Header />
-        <Container>
-          <Bio />
-        </Container>
-      </div>
-      <Container>
-        <Resume />
-      </Container>
-    </>
+    <Layout>
+      <AppRouter />
+    </Layout>
   );
 }
-
-const Container = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
-`;
 
 export default App;
