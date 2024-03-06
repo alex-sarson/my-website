@@ -80,7 +80,7 @@ const Navigation: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
         </Surface>
       </MobileModal>
 
-      <Surface>
+      <Surface className="desktopSurface">
         <NavInternal menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <ThemeSwitcher />
       </Surface>
@@ -156,7 +156,17 @@ const NavItemsContainer = styled.nav`
   a {
     color: var(--surface-container-text);
     margin: var(--margin-center);
-    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    border-radius: 24px;
+
+    @media screen and (min-width: 960px) {
+      display: block;
+      width: auto;
+      text-align: center;
+    }
 
     span {
       display: flex;
@@ -169,31 +179,62 @@ const NavItemsContainer = styled.nav`
       transition: all ease 0.2s;
 
       svg {
-        transform: scale(1);
+        transform: scale(1.3);
         transition: all ease 0.2s;
+
+        @media screen and (min-width: 960px) {
+          transform: scale(1);
+        }
       }
     }
 
     &:hover {
+      background-color: var(--surface-2-container-hover);
+
+      @media screen and (min-width: 960px) {
+        background-color: transparent;
+      }
+
       span {
-        background-color: var(--surface-2-container-hover);
+        @media screen and (min-width: 960px) {
+          background-color: var(--surface-2-container-hover);
+        }
 
         svg {
-          transform: scale(1.1);
+          transform: scale(1.4);
+
+          @media screen and (min-width: 960px) {
+            transform: scale(1.1);
+          }
         }
       }
     }
 
     &.active {
       color: var(--surface-2-container-text-active);
+      background-color: var(--surface-2-container-active);
+
+      @media screen and (min-width: 960px) {
+        background-color: transparent;
+      }
 
       span {
-        background-color: var(--surface-2-container-active);
+        @media screen and (min-width: 960px) {
+          background-color: var(--surface-2-container-active);
+        }
       }
 
       &:hover {
+        background-color: var(--surface-2-container-active-hover);
+
+        @media screen and (min-width: 960px) {
+          background-color: transparent;
+        }
+
         span {
-          background-color: var(--surface-2-container-active-hover);
+          @media screen and (min-width: 960px) {
+            background-color: var(--surface-2-container-active-hover);
+          }
         }
       }
     }
