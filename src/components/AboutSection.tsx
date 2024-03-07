@@ -21,8 +21,6 @@ const AboutSection: React.FC = () => {
     },
   ];
 
-  console.log(tiles);
-
   return (
     <Section>
       <HeaderContainer>
