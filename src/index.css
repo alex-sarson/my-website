@@ -22,8 +22,8 @@
   --surface-2-container-active: #007744;
   --surface-2-container-active-hover: #008c4f;
 
-  --surface-text: #e2dce5;
-  --surface-container-text: #e6e0e9;
+  --surface-text: #e1e1e1;
+  --surface-container-text: #e7e7e7;
   --surface-2-container-text-active: #c2ffd3;
 
   --display-xl-font-size: 88px;
@@ -47,6 +47,9 @@
   --margin-section: 96px 0;
   --margin-article: 24px;
   --margin-header: 24px;
+
+  --mobile-menu-box-shadow: 2px 0px 11px 0px #0f0d12;
+  --mobile-menu-item-border-radius: 24px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -182,15 +185,6 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 button.mobileMenu-button {

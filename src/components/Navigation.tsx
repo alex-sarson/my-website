@@ -51,6 +51,7 @@ const ThemeSwitcher: React.FC = () => {
   return (
     <Switcher>
       <FaRegSun />
+      <span>Turn on light mode</span>
     </Switcher>
   );
 };
@@ -66,7 +67,7 @@ const Navigation: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
   return (
     <>
       <MobileModal className={menuOpen ? 'mobileMenuOpen' : ''}>
-        <Surface>
+        <Surface className="mobileSurface">
           <BurgerContainer>
             <Burger onClick={handleMenu} className="mobileMenu-button">
               <MdMenuOpen />
@@ -132,6 +133,10 @@ const Surface = styled.div`
     border-radius: 0;
     justify-content: space-between;
   }
+
+  &.mobileSurface {
+    box-shadow: var(--mobile-menu-box-shadow);
+  }
 `;
 
 const NavInternalContainer = styled.div`
@@ -160,7 +165,7 @@ const NavItemsContainer = styled.nav`
     display: flex;
     align-items: center;
     height: 48px;
-    border-radius: 24px;
+    border-radius: var(--mobile-menu-item-border-radius);
 
     @media screen and (min-width: 960px) {
       display: block;
@@ -242,8 +247,37 @@ const NavItemsContainer = styled.nav`
 `;
 
 const Switcher = styled.button`
-  background-color: pink;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  text-align: left;
+  height: 48px;
+  border-radius: var(--mobile-menu-item-border-radius);
+  background-color: transparent;
+  border: 1px solid var(--surface-container-text);
+  color: var(--surface-container-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media screen and (min-width: 960px) {
+    border-radius: 50%;
+    width: 48px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  svg {
+    transform: scale(1.2);
+  }
+
+  span {
+    @media screen and (min-width: 960px) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    background-color: var(--surface-2-container-hover);
+  }
 `;
 
 const BurgerContainer = styled.div`
