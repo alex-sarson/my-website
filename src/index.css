@@ -198,6 +198,7 @@ button.mobileMenu-button {
   border-radius: 50%;
   font-size: var(--display-xs-font-size);
   background-color: transparent;
+  color: var(--surface-container-text);
 }
 
 .flex {
