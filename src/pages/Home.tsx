@@ -14,7 +14,6 @@ const Home: React.FC = () => {
       <article>
         <AboutSection />
         <PortfolioSection />
-        <Socials />
       </article>
     </>
   );

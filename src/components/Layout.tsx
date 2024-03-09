@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { styled } from 'styled-components';
 import Navigation from './Navigation';
 import MobileHeader from './MobileHeader';
+import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,7 +15,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <MobileHeader menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Navigation menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Main>
-        <ContentContainer>{children}</ContentContainer>
+        <ContentContainer>
+          {children}
+          <Footer />
+        </ContentContainer>
       </Main>
     </Page>
   );

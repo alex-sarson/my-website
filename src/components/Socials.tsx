@@ -1,12 +1,5 @@
 import styled from 'styled-components';
-import Section from './Section';
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaSteam,
-  FaSpotify,
-} from 'react-icons/fa6';
+import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa6';
 
 const Socials: React.FC = () => {
   const items = [
@@ -29,48 +22,29 @@ const Socials: React.FC = () => {
       username: 'notdospek',
     },
     {
-      icon: <FaSteam />,
-      link: 'https://steamcommunity.com/profiles/76561198073758951/',
-      title: 'Steam',
-      username: 'Dospek',
-    },
-    {
-      icon: <FaSpotify />,
-      link: 'https://open.spotify.com/user/dospek',
-      title: 'Spotify',
-      username: 'dospek',
+      icon: <FaEnvelope />,
+      link: 'mailto:alex.luke.sarson@gmail.com',
+      title: 'Email',
+      username: 'alex.luke.sarson@gmail.com',
     },
   ];
 
   return (
-    <Section>
-      <HeaderContainer>
-        <h2>My Links</h2>
-      </HeaderContainer>
-      <SocialsContainer>
-        {items.map((item, i) => (
-          <SocialItem
-            href={item.link}
-            target="_blank"
-            rel="noreferrer"
-            title={item.title}
-            key={`socialItem${i}`}
-          >
-            {item.icon}
-          </SocialItem>
-        ))}
-      </SocialsContainer>
-    </Section>
+    <SocialsContainer>
+      {items.map((item, i) => (
+        <SocialItem
+          href={item.link}
+          target="_blank"
+          rel="noreferrer"
+          title={item.title}
+          key={`socialItem${i}`}
+        >
+          {item.icon}
+        </SocialItem>
+      ))}
+    </SocialsContainer>
   );
 };
-
-const HeaderContainer = styled.div`
-  margin: 24px;
-
-  h2 {
-    margin: 0;
-  }
-`;
 
 const SocialsContainer = styled.div`
   display: flex;
@@ -79,13 +53,13 @@ const SocialsContainer = styled.div`
 
 const SocialItem = styled.a`
   svg {
-    color: var(--surface-container);
+    color: var(--surface-container-text);
     height: 30px;
     width: 30px;
 
     &:hover,
     &:active {
-      color: var(--surface-container-hover);
+      color: var(--surface-container-text);
     }
   }
 `;
