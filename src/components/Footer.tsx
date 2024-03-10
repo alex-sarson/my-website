@@ -7,23 +7,23 @@ import { Link } from 'react-router-dom';
 const Footer: React.FC = () => {
   return (
     <FooterContainer>
-      <div className="my-name">
+      <div className="copy">
         <Link to={'/'}>
           <h3>Alex Sarson</h3>
         </Link>
+        <p className="inspired">
+          Inspired by{' '}
+          <a
+            href="m3.material.io"
+            target="_blank"
+            rel="noreferrer"
+            className="google"
+          >
+            <FaGoogle />
+          </a>
+        </p>
       </div>
       <Socials />
-      <h3 className="inspired">
-        Inspired by{' '}
-        <a
-          href="m3.material.io"
-          target="_blank"
-          rel="noreferrer"
-          className="google"
-        >
-          <FaGoogle />
-        </a>
-      </h3>
     </FooterContainer>
   );
 };
@@ -32,11 +32,30 @@ const FooterContainer = styled.footer`
   max-width: var(--article-max-width);
   margin: var(--margin-center);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   border-top: 2px solid var(--surface-container);
-  align-items: flex-end;
-  padding: 40px 0 40px;
+  align-items: flex-start;
+  padding: 40px 0;
+  gap: 2rem;
+
+  @media screen and (min-width: 576px) {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0;
+  }
+
+  div:first-of-type {
+    margin-left: 20px;
+  }
+
+  div:last-of-type {
+    margin-left: 20px;
+
+    @media screen and (min-width: 576px) {
+      margin: 0 20px 0 0;
+    }
+  }
 
   h3 {
     margin-bottom: 0;
@@ -47,10 +66,14 @@ const FooterContainer = styled.footer`
     color: var(--surface-2);
   }
 
-  & > div.my-name,
-  & > h3.inspired {
+  div.copy,
+  p.inspired {
     width: 300px;
     display: flex;
+  }
+
+  div.copy {
+    flex-direction: column;
   }
 
   a > svg {
@@ -61,10 +84,10 @@ const FooterContainer = styled.footer`
     margin-bottom: 4px;
   }
 
-  & > h3.inspired {
+  p.inspired {
     text-align: end;
-    justify-content: flex-end;
     gap: 6px;
+    margin: 0;
   }
 `;
 
