@@ -1,4 +1,4 @@
-import Article from '../components/Article';
+import Article from '../components/StickyImageArticle';
 import Hero from '../components/Hero';
 
 const ResumePage: React.FC = () => {

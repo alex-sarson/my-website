@@ -26,6 +26,7 @@
   --surface-container-text: #e7e7e7;
   --surface-2-container-text-active: #c2ffd3;
 
+  --display-xl-hero-font-size: 112px;
   --display-xl-font-size: 88px;
   --display-l-font-size: 57px;
   --display-m-font-size: 45px;
@@ -45,7 +46,7 @@
 
   --margin-center: 0 auto;
   --margin-section: 96px 0;
-  --margin-article: 24px;
+  --margin-article: 0 24px;
   --margin-header: 24px;
 
   --mobile-menu-box-shadow: 2px 0px 11px 0px #0f0d12;
@@ -78,13 +79,19 @@ article {
 }
 
 h1 {
-  font-size: var(--display-m-font-size);
+  font-size: var(--display-l-font-size);
   line-height: 1.1;
 }
 
 @media screen and (min-width: 600px) {
   h1 {
     font-size: var(--display-xl-font-size);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: var(--display-xl-hero-font-size);
   }
 }
 
