@@ -61,9 +61,19 @@ const FooterContainer = styled.footer`
     margin-bottom: 0;
   }
 
+  a,
+  a > svg {
+    transition: color ease 0.2s;
+  }
+
   a:hover,
   a > svg:hover {
     color: var(--surface-2);
+  }
+
+  a:active,
+  a > svg:active {
+    color: var(--surface-2-container-hover);
   }
 
   div.copy {
