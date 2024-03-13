@@ -44,14 +44,10 @@ const ScrollingContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin: var(--margin-section);
+  margin: var(--margin-article);
 
   h2 {
     font-size: var(--display-l-font-size);
-  }
-
-  p {
-    max-width: 60ch;
   }
 `;
 
