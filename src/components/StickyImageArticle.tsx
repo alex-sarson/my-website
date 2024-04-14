@@ -24,8 +24,8 @@ const Container = styled.div`
 
 const StickyImagesContainer = styled.div`
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 8px;
+  height: calc(100vh - 16px);
   background-color: var(--surface-container);
   border-radius: var(--tile-border-radius);
   width: 50%;
