@@ -10,7 +10,7 @@ const Hero: React.FC<HeroProps> = ({ title, children }) => {
     <Container>
       <Background>
         <h1>{title}</h1>
-        <p>{children}</p>
+        {children}
       </Background>
     </Container>
   );
@@ -29,12 +29,14 @@ const Background = styled.div`
   background-color: var(--surface-container);
   position: relative;
   overflow: hidden;
+  font-size: var(--display-xs-font-size);
 
   @media screen and (min-width: 600px) {
     padding: 56px;
   }
 
-  h1 {
+  h1,
+  h3 {
     margin: 0;
   }
 
