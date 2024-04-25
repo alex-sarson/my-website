@@ -3,12 +3,18 @@ import styled from 'styled-components';
 interface HeroProps {
   title: string;
   children: React.ReactNode;
+  image: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ title, children }) => {
+const Hero: React.FC<HeroProps> = ({ title, children, image }) => {
+  const backgroundStyles = {
+    backgroundImage: `url(${image})`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+  };
   return (
     <Container>
-      <Background>
+      <Background style={backgroundStyles}>
         <h1>{title}</h1>
         {children}
       </Background>
@@ -33,6 +39,10 @@ const Background = styled.div`
 
   @media screen and (min-width: 600px) {
     padding: 56px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   h1,

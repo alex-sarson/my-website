@@ -1,21 +1,22 @@
 import styled from 'styled-components';
 import Section from './Section';
 import Tile from './Tile';
-import Me from '../images/me.png';
+import Scrum from '../images/scrum.webp';
+import Bar from '../images/bar.webp';
 
 const PortfolioSection: React.FC = () => {
   const tiles = [
     {
       title: 'Projects',
       link: '/bio',
-      image: { Me },
+      image: Scrum,
       excerpt:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus asperiores obcaecati facere repudiandae aliquam soluta. Natus nulla cumque veniam minus.',
     },
     {
       title: 'Project 2',
       link: '/bio',
-      image: { Me },
+      image: Bar,
       excerpt:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptate ad quae debitis, perferendis impedit distinctio quibusdam possimus earum aliquid!',
     },
@@ -30,7 +31,7 @@ const PortfolioSection: React.FC = () => {
         {tiles.map((tile, i) => (
           <Tile
             excerpt={tile.excerpt}
-            image={tile.image.Me}
+            image={tile.image}
             key={`tile${i}`}
             link={tile.link}
             title={tile.title}
