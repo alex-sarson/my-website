@@ -73,12 +73,18 @@ const BioPage: React.FC = () => {
     },
   ];
 
+  const imageStyling = {
+    filter: 'brightness(0.8)',
+  };
+
   return (
     <>
       <Hero title="Bio" image={GreenPainting}>
         The story of Me, how I became a Web Developer, and everything inbetween
       </Hero>
-      <StickyImageArticle image={<img src={ImageOfMe} alt="Me" />}>
+      <StickyImageArticle
+        image={<img src={ImageOfMe} alt="Me" style={imageStyling} />}
+      >
         {ArticleContent.map((section, i) => (
           <ArticleSection key={`articleSection${i}`}>
             <h2>{section.title}</h2>
