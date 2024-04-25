@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 interface ArticleProps {
   children: React.ReactNode;
-  images: React.ReactNode;
+  image: React.ReactNode;
 }
 
-const StickyImageArticle: React.FC<ArticleProps> = ({ children, images }) => {
+const StickyImageArticle: React.FC<ArticleProps> = ({ children, image }) => {
   return (
     <Container>
       <ScrollingContentContainer>{children}</ScrollingContentContainer>
-      <StickyImagesContainer>{images}</StickyImagesContainer>
+      <StickyImagesContainer>{image}</StickyImagesContainer>
     </Container>
   );
 };

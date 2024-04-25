@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Section from './Section';
-import Me from '../images/me.png';
+import StationP from '../images/station-pianist.webp';
+import Trek from '../images/trek.webp';
 import Tile from './Tile';
 
 const AboutSection: React.FC = () => {
@@ -8,14 +9,13 @@ const AboutSection: React.FC = () => {
     {
       title: 'Bio',
       link: '/bio',
-      image: { Me },
-      excerpt:
-        "I've been coding for ** years now. Click here for a little bit more about me.",
+      image: StationP,
+      excerpt: 'The part where I tell you a little bit about me.',
     },
     {
       title: 'Resume',
       link: '/resume',
-      image: { Me },
+      image: Trek,
       excerpt:
         'After graduating with an Architecture degree, I decided that a career in Tech was more suited for me.',
     },
@@ -30,7 +30,7 @@ const AboutSection: React.FC = () => {
         {tiles.map((tile, i) => (
           <Tile
             excerpt={tile.excerpt}
-            image={tile.image.Me}
+            image={tile.image}
             key={`tile${i}`}
             link={tile.link}
             title={tile.title}

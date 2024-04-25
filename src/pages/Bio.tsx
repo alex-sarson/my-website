@@ -1,29 +1,10 @@
 import Hero from '../components/Hero';
 import StickyImageArticle from '../components/StickyImageArticle';
 import ImageOfMe from '../images/me.png';
-import Pepe from '../images/giga pepe.jpg';
-import Synth from '../images/images.jpg';
 import styled from 'styled-components';
+import GreenPainting from '../images/green-painting.jpg';
 
 const BioPage: React.FC = () => {
-  const ImagesArray = [
-    {
-      alt: 'Me',
-      src: ImageOfMe,
-      zIndex: 5,
-    },
-    {
-      alt: 'Pepe',
-      src: Pepe,
-      zIndex: 4,
-    },
-    {
-      alt: 'Synth',
-      src: Synth,
-      zIndex: 3,
-    },
-  ];
-
   function CodingDuration() {
     const start = new Date('2020-01-01').getFullYear();
     const today = new Date().getFullYear();
@@ -68,7 +49,7 @@ const BioPage: React.FC = () => {
         "Hey 👋🏽 I'm Alex, a " +
           MyAge() +
           " year old Web Developer living in London. I moved to London in 2023 to expose myself to better opportunites and I love it here, I'm definitely more of a city person. My favourite thing about London is that you can meet people from all walks of life, just walking down a busy street you hear so many different accents!",
-        "In my free time, I enjoy going to the gym four days a week, watching anime (currently One Piece), reading (particularly Sci-Fi; Isaac Asimov is my favorite author), listening to music, and honing my coding skills (I'm currently learning Gleam).",
+        "In my free time, I enjoy going to the gym four days a week, watching anime (currently One Piece), reading (particularly Sci-Fi; Isaac Asimov is my favourite author), listening to music, and honing my coding skills (I'm currently learning Gleam).",
       ],
     },
     {
@@ -94,19 +75,10 @@ const BioPage: React.FC = () => {
 
   return (
     <>
-      <Hero title="Bio">
-        The story of Me, how I became a Web Developer and everything inbetween
+      <Hero title="Bio" image={GreenPainting}>
+        The story of Me, how I became a Web Developer, and everything inbetween
       </Hero>
-      <StickyImageArticle
-        images={ImagesArray.map((item, i) => (
-          <img
-            src={item.src}
-            alt={item.alt}
-            key={i}
-            style={{ zIndex: item.zIndex }}
-          />
-        ))}
-      >
+      <StickyImageArticle image={<img src={ImageOfMe} alt="Me" />}>
         {ArticleContent.map((section, i) => (
           <ArticleSection key={`articleSection${i}`}>
             <h2>{section.title}</h2>

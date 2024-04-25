@@ -2,16 +2,9 @@ import StickyImageArticle from '../components/StickyImageArticle';
 import Hero from '../components/Hero';
 import PlaceHolder from '../images/placeholder-2.webp';
 import styled from 'styled-components';
+import Blue from '../images/blue.jpg';
 
 const ResumePage: React.FC = () => {
-  const ImagesArray = [
-    {
-      alt: 'Place Holder Image',
-      src: PlaceHolder,
-      zIndex: 5,
-    },
-  ];
-
   const ArticleContent = [
     {
       title: 'First bit of exp',
@@ -21,19 +14,12 @@ const ResumePage: React.FC = () => {
 
   return (
     <>
-      <Hero title="Resume">
+      <Hero title="Resume" image={Blue}>
         This is the copy for the Resume section.
         <br />I don't really know what to write here yet
       </Hero>
       <StickyImageArticle
-        images={ImagesArray.map((item, i) => (
-          <img
-            src={item.src}
-            alt={item.alt}
-            key={i}
-            style={{ zIndex: item.zIndex }}
-          />
-        ))}
+        image={<img src={PlaceHolder} alt="Place Holder Image" />}
       >
         {ArticleContent.map((section, i) => (
           <ArticleSection key={`articleSection${i}`}>
