@@ -12,22 +12,6 @@
   color: var(--surface-text);
   background-color: var(--surface);
 
-  --scrim: #14121883;
-
-  --surface: #141218;
-  --surface-container: #211f26;
-  --surface-container-hover: #007744;
-  --surface-2: #2f2d31;
-  --surface-2-container-hover: #3e4144;
-  --surface-2-container-active: #007744;
-  --surface-2-container-active-hover: #008c4f;
-
-  --surface-text: #e1e1e1;
-  --surface-container-text: #e7e7e7;
-  --surface-2-container-text-active: #c2ffd3;
-
-  --surface-mobile-header: #0c0b0f;
-
   --display-xl-hero-font-size: 112px;
   --display-xl-font-size: 88px;
   --display-l-font-size: 57px;
@@ -56,7 +40,6 @@
   --margin-article: 0 24px;
   --margin-header: 24px;
 
-  --mobile-menu-box-shadow: 2px 0px 11px 0px #0f0d12;
   --mobile-menu-item-border-radius: 24px;
 
   font-synthesis: none;
@@ -64,6 +47,48 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+html {
+  transition: ease 0.3s;
+
+  &[data-theme='light'] {
+    --surface-text: #1c1b1d;
+    --surface-container-text: #4d4256;
+    --surface-2-container-text-active: #21182b;
+
+    --surface: #fefbff;
+    --surface-container: #f8f1f6;
+    --surface-container-hover: #dcdaf5;
+    --surface-2: #f2ecee;
+    --surface-2-container-hover: #e5dee2;
+    --surface-2-container-active: var(--surface-container-hover);
+    --surface-2-container-active-hover: #d0cee8;
+
+    --surface-mobile-header: #fff;
+
+    --mobile-menu-box-shadow: 2px 0px 11px 0px #0f0d1237;
+  }
+
+  &[data-theme='dark'] {
+    --scrim: #14121883;
+
+    --surface-text: #e1e1e1;
+    --surface-container-text: #e7e7e7;
+    --surface-2-container-text-active: #c2ffd3;
+
+    --surface: #141218;
+    --surface-container: #211f26;
+    --surface-container-hover: #007744;
+    --surface-2: #2f2d31;
+    --surface-2-container-hover: #3e4144;
+    --surface-2-container-active: var(--surface-container-hover);
+    --surface-2-container-active-hover: #008c4f;
+
+    --surface-mobile-header: #0c0b0f;
+
+    --mobile-menu-box-shadow: 2px 0px 11px 0px #0f0d12;
+  }
 }
 
 a {
@@ -217,19 +242,4 @@ button.mobileMenu-button {
 
 .flex {
   display: flex;
-}
-
-@media (prefers-color-scheme: light) {
-  /* :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  } */
 }

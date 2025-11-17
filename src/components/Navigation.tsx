@@ -4,10 +4,10 @@ import {
   FaHouseChimney,
   FaReadme,
   FaQuoteLeft,
-  FaRegSun,
 } from 'react-icons/fa6';
 import { MdMenuOpen } from 'react-icons/md';
 import React, { Dispatch, SetStateAction } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 interface NavigationProps {
   menuOpen: boolean;
@@ -46,15 +46,6 @@ const NavInternal: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
   );
 };
 
-const ThemeSwitcher: React.FC = () => {
-  return (
-    <Switcher>
-      <FaRegSun />
-      <span>Turn on light mode</span>
-    </Switcher>
-  );
-};
-
 // Parent component rendering both navigation types
 const Navigation: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
   // TODO: prevent scroll when mobile menu is open
@@ -75,14 +66,14 @@ const Navigation: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
 
           <NavInternalContainer>
             <NavInternal menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <ThemeSwitcher />
+            <ThemeToggle />
           </NavInternalContainer>
         </Surface>
       </MobileModal>
 
       <Surface className="desktopSurface">
         <NavInternal menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <ThemeSwitcher />
+        <ThemeToggle />
       </Surface>
     </>
   );
@@ -242,40 +233,6 @@ const NavItemsContainer = styled.nav`
         }
       }
     }
-  }
-`;
-
-const Switcher = styled.button`
-  margin: 0 auto 20px;
-  text-align: left;
-  height: 48px;
-  border-radius: var(--mobile-menu-item-border-radius);
-  background-color: transparent;
-  border: 1px solid var(--surface-container-text);
-  color: var(--surface-container-text);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  @media screen and (min-width: 960px) {
-    border-radius: 50%;
-    width: 48px;
-    padding: 0;
-    justify-content: center;
-  }
-
-  svg {
-    transform: scale(1.2);
-  }
-
-  span {
-    @media screen and (min-width: 960px) {
-      display: none;
-    }
-  }
-
-  &:hover {
-    background-color: var(--surface-2-container-hover);
   }
 `;
 

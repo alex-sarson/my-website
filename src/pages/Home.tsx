@@ -1,6 +1,6 @@
 import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
-import PortfolioSection from '../components/PortfolioSection';
+// import PortfolioSection from '../components/PortfolioSection';
 import Plant from '../images/green-plant.jpg';
 
 const Home: React.FC = () => {
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       </Hero>
       <article>
         <AboutSection />
-        <PortfolioSection />
+        {/* <PortfolioSection /> */}
       </article>
     </>
   );
