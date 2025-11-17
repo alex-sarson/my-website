@@ -32,7 +32,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
 
 const Surface = styled.header`
   width: 100%;
-  background-color: var(--surface);
+  background-color: var(--surface-mobile-header);
   position: fixed;
   z-index: 1;
   font-size: 16px;

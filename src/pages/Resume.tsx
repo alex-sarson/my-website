@@ -2,7 +2,7 @@ import StickyImageArticle from '../components/StickyImageArticle';
 import Hero from '../components/Hero';
 import PlaceHolder from '../images/placeholder-2.webp';
 import styled from 'styled-components';
-import RedPlant from '../images/red-plant.jpg';
+import Petals from '../images/petals.png';
 
 const ResumePage: React.FC = () => {
   const ArticleContent = [
@@ -14,7 +14,7 @@ const ResumePage: React.FC = () => {
 
   return (
     <>
-      <Hero title="Resume" image={RedPlant}>
+      <Hero title="Resume" image={Petals}>
         This is the copy for the Resume section.
         <br />I don't really know what to write here yet
       </Hero>

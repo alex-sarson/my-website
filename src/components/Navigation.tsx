@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {
   FaHouseChimney,
   FaReadme,
-  FaCode,
   FaQuoteLeft,
   FaRegSun,
 } from 'react-icons/fa6';
@@ -27,7 +26,7 @@ const NavInternal: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
     { name: 'Home', route: '/', icon: <FaHouseChimney /> },
     { name: 'Bio', route: '/bio', icon: <FaQuoteLeft /> },
     { name: 'Resume', route: '/resume', icon: <FaReadme /> },
-    { name: 'Projects', route: '/projects', icon: <FaCode /> },
+    // { name: 'Projects', route: '/projects', icon: <FaCode /> },
   ];
 
   return (

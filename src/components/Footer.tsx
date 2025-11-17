@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
         <p className="inspired">
           Inspired by{' '}
           <a
-            href="m3.material.io"
+            href="https://m3.material.io"
             target="_blank"
             rel="noreferrer"
             className="google"

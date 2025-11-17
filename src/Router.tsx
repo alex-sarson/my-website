@@ -4,7 +4,7 @@ import Home from './pages/Home.tsx';
 import BioPage from './pages/Bio.tsx';
 import ResumePage from './pages/Resume.tsx';
 import PageNotFound from './pages/404.tsx';
-import Projects from './pages/Projects.tsx';
+// import Projects from './pages/Projects.tsx';
 
 const AppRouter: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const AppRouter: React.FC = () => {
       <Route path="/bio" element={<BioPage />} />
       <Route path="/resume" element={<ResumePage />} />
       <Route path="*" element={<PageNotFound />} />
-      <Route path="/projects" element={<Projects />} />
+      {/* <Route path="/projects" element={<Projects />} /> */}
     </Routes>
   );
 };
