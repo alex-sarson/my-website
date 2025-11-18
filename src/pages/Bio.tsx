@@ -1,8 +1,11 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 import Hero from '../components/Hero';
 import StickyImageArticle from '../components/StickyImageArticle';
 import ImageOfMe from '../images/me.png';
 import styled from 'styled-components';
-import GreenPainting from '../images/green-painting.jpg';
+import StylesDark from '../images/styles-dark.jpg';
+import StylesLight from '../images/styles-light.jpg';
 import { CodingDuration, MyAge } from '../utils/Dates.tsx';
 import { BioContent } from '../data/Bio.tsx';
 
@@ -14,9 +17,12 @@ const BioPage: React.FC = () => {
 
   const articleContent = BioContent(MyAge(), CodingDuration());
 
+  const { darkMode } = useContext(ThemeContext);
+  const Styles = darkMode ? StylesDark : StylesLight;
+
   return (
     <>
-      <Hero title="Bio" image={GreenPainting}>
+      <Hero title="Bio" image={Styles}>
         The story of Me, how I became a Web Developer,
         <br/>and everything inbetween.
       </Hero>

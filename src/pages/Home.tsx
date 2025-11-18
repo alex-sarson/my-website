@@ -1,9 +1,14 @@
 import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 // import PortfolioSection from '../components/PortfolioSection';
-import Plant from '../images/green-plant.jpg';
+import PetalsLight from '../images/petals-light.png';
+import PetalsDark from '../images/petals.png';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Home: React.FC = () => {
+  const { darkMode } = useContext(ThemeContext);
+  const Plant = darkMode ? PetalsDark : PetalsLight;
   return (
     <>
       <Hero title="Hello" image={Plant}>

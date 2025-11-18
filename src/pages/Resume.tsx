@@ -1,8 +1,11 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 import StickyImageArticle from '../components/StickyImageArticle';
 import Hero from '../components/Hero';
 import PlaceHolder from '../images/placeholder-2.webp';
 import styled from 'styled-components';
-import Petals from '../images/petals.png';
+import FoundationsLight from '../images/foundations-light.jpg';
+import FoundationsDark from '../images/foundations-dark.jpg';
 
 const ResumePage: React.FC = () => {
   const ArticleContent = [
@@ -12,9 +15,12 @@ const ResumePage: React.FC = () => {
     },
   ];
 
+  const { darkMode } = useContext(ThemeContext);
+  const Foundations = darkMode ? FoundationsDark : FoundationsLight;
+
   return (
     <>
-      <Hero title="Resume" image={Petals}>
+      <Hero title="Resume" image={Foundations}>
         This is the copy for the Resume section.
         <br />I don't really know what to write here yet
       </Hero>
