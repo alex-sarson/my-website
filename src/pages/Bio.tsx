@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import Hero from '../components/Hero';
 import StickyImageArticle from '../components/StickyImageArticle';
+import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers.tsx';
 import ImageOfMe from '../images/me.png';
 import styled from 'styled-components';
 import StylesDark from '../images/styles-dark.jpg';
@@ -35,7 +36,7 @@ const BioPage: React.FC = () => {
             {section.paragraphs.map((paragraph, pi) => (
               <p key={`paragraph${pi}`}>{paragraph}</p>
             ))}
-            {articleContent.length !== i + 1 ? <Divider /> : <Spacer />}
+            {articleContent.length !== i + 1 ? <ArticleDivider /> : <ArticleSpacer />}
           </ArticleSection>
         ))}
       </StickyImageArticle>
@@ -49,25 +50,19 @@ const ArticleSection = styled.div`
 
   h2 {
     margin-bottom: 0;
+    line-height: 64px;
   }
 
-  * {
+  p,
+  h2 {
     margin: 40px;
     margin-left: 24px;
     margin-right: 24px;
   }
-`;
 
-const Divider = styled.div`
-  height: var(--divider-width);
-  width: var(--divider-width);
-  background-color: var(--theme-colour-primary);
-  border-radius: 50%;
-  margin: var(--divider-margin);
-`;
-
-const Spacer = styled.div`
-  height: var(--spacer-height);
+  p:first-of-type {
+    margin-top: 16px;
+  }
 `;
 
 export default BioPage;

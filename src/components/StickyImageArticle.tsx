@@ -8,7 +8,9 @@ interface ArticleProps {
 const StickyImageArticle: React.FC<ArticleProps> = ({ children, image }) => {
   return (
     <Container>
-      <ScrollingContentContainer>{children}</ScrollingContentContainer>
+      <ScrollingContentWrapper>
+        <ScrollingContentContainer>{children}</ScrollingContentContainer>
+      </ScrollingContentWrapper>
       <StickyImagesContainer>{image}</StickyImagesContainer>
     </Container>
   );
@@ -16,8 +18,6 @@ const StickyImageArticle: React.FC<ArticleProps> = ({ children, image }) => {
 
 const Container = styled.div`
   width: 100%;
-  max-width: var(--container-max-width);
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
 `;
@@ -39,12 +39,16 @@ const StickyImagesContainer = styled.div`
     position: absolute;
   }
 `;
+const ScrollingContentWrapper = styled.div`
+  width: 50%;
+`;
 
 const ScrollingContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin: var(--margin-article);
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
 
   h2 {
     font-size: var(--display-l-font-size);

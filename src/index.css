@@ -64,6 +64,7 @@ html {
     --surface-2-container-text-active: #21182b;
 
     --surface: #fefbff;
+    --surface-variant: #e8e0e8;
     --surface-container: #f8f1f6;
     --surface-container-hover: #dcdaf5;
     --surface-2: #f2ecee;
@@ -88,6 +89,7 @@ html {
     --surface-2-container-text-active: #e2e0fb;
 
     --surface: #141314;
+    --surface-variant: #4d4256;
     --surface-container: #1c1b1d;
     --surface-container-hover: #45455a;
     --surface-2: #211f21;

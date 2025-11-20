@@ -6,36 +6,42 @@ import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
-    <FooterContainer>
-      <div className="copy">
-        <Link to={'/'} className="name" title='Home'>
-          <h3>Alex Sarson</h3>
-        </Link>
-        <p className="inspired">
-          Inspired by{' '}
-          <a
-            href="https://m3.material.io"
-            target="_blank"
-            rel="noreferrer"
-            className="google"
-            title="Material Design 3"
-          >
-            <FaGoogle />
-          </a>
-        </p>
-      </div>
-      <Socials />
-    </FooterContainer>
+    <FooterWrapper>
+      <FooterContainer>
+        <div className="copy">
+          <Link to={'/'} className="name" title='Home'>
+            <h3>Alex Sarson</h3>
+          </Link>
+          <p className="inspired">
+            Inspired by{' '}
+            <a
+              href="https://m3.material.io"
+              target="_blank"
+              rel="noreferrer"
+              className="google"
+              title="Material Design 3"
+            >
+              <FaGoogle />
+            </a>
+          </p>
+        </div>
+        <Socials />
+      </FooterContainer>
+    </FooterWrapper>
   );
 };
 
-const FooterContainer = styled.footer`
+const FooterWrapper = styled.footer`
+  border-top: 2px solid var(--surface-variant);
+  margin: 120px 8px 0 8px; 
+`
+
+const FooterContainer = styled.div`
   max-width: var(--article-max-width);
   margin: var(--margin-center);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-top: 2px solid var(--surface-container);
   align-items: flex-start;
   padding: 40px 0;
   gap: 2rem;
