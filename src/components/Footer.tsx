@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <div className="copy">
-        <Link to={'/'} className="name">
+        <Link to={'/'} className="name" title='Home'>
           <h3>Alex Sarson</h3>
         </Link>
         <p className="inspired">
@@ -18,6 +18,7 @@ const Footer: React.FC = () => {
             target="_blank"
             rel="noreferrer"
             className="google"
+            title="Material Design 3"
           >
             <FaGoogle />
           </a>
@@ -68,12 +69,12 @@ const FooterContainer = styled.footer`
 
   a:hover,
   a > svg:hover {
-    color: var(--surface-2);
+    color: var(--surface-container-text-hover);
   }
 
   a:active,
   a > svg:active {
-    color: var(--surface-2-container-hover);
+    color: var(--surface-container-text-active);
   }
 
   div.copy {

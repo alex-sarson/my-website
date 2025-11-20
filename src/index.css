@@ -19,6 +19,8 @@
   --display-s-font-size: 36px;
   --display-xs-font-size: 24px;
 
+  --menu-item-font-size: 12px;
+
   --divider-width: 15px;
   --divider-margin: 126px auto 0 auto;
 
@@ -53,8 +55,12 @@ html {
   transition: ease 0.3s;
 
   &[data-theme='light'] {
+    --theme-colour-primary: #cbbeff;
+
     --surface-text: #1c1b1d;
     --surface-container-text: #4d4256;
+    --surface-container-text-hover: #322b38;
+    --surface-container-text-active: #201b24;
     --surface-2-container-text-active: #21182b;
 
     --surface: #fefbff;
@@ -71,19 +77,23 @@ html {
   }
 
   &[data-theme='dark'] {
+    --theme-colour-primary: #ccbeff;
+    
     --scrim: #14121883;
 
     --surface-text: #e1e1e1;
     --surface-container-text: #e7e7e7;
-    --surface-2-container-text-active: #c2ffd3;
+    --surface-container-text-hover: #b0aeae;
+    --surface-container-text-active: #888787;
+    --surface-2-container-text-active: #e2e0fb;
 
-    --surface: #141218;
-    --surface-container: #211f26;
-    --surface-container-hover: #007744;
-    --surface-2: #2f2d31;
-    --surface-2-container-hover: #3e4144;
+    --surface: #141314;
+    --surface-container: #1c1b1d;
+    --surface-container-hover: #45455a;
+    --surface-2: #211f21;
+    --surface-2-container-hover: #2f2c2f;
     --surface-2-container-active: var(--surface-container-hover);
-    --surface-2-container-active-hover: #008c4f;
+    --surface-2-container-active-hover: #504f63;
 
     --surface-mobile-header: #0c0b0f;
 

@@ -61,7 +61,7 @@ const ArticleSection = styled.div`
 const Divider = styled.div`
   height: var(--divider-width);
   width: var(--divider-width);
-  background-color: var(--surface-container);
+  background-color: var(--theme-colour-primary);
   border-radius: 50%;
   margin: var(--divider-margin);
 `;

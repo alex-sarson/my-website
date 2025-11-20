@@ -37,6 +37,7 @@ const NavInternal: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
           to={item.route}
           className={item.route == route ? 'active' : ''}
           onClick={handleMenu}
+          title={item.name}
         >
           <span>{item.icon}</span>
           <div>{item.name}</div>
@@ -144,7 +145,7 @@ const NavItemsContainer = styled.nav`
 
   @media screen and (min-width: 960px) {
     margin: 20px 0 0 0;
-    gap: 14px 0;
+    gap: 16px 0;
     width: 88px;
   }
 
@@ -156,6 +157,7 @@ const NavItemsContainer = styled.nav`
     align-items: center;
     height: 48px;
     border-radius: var(--mobile-menu-item-border-radius);
+    font-size: var(--menu-item-font-size);
 
     @media screen and (min-width: 960px) {
       display: block;
@@ -174,12 +176,8 @@ const NavItemsContainer = styled.nav`
       transition: all ease 0.2s;
 
       svg {
-        transform: scale(1.3);
+        transform: scale(1.6);
         transition: all ease 0.2s;
-
-        @media screen and (min-width: 960px) {
-          transform: scale(1);
-        }
       }
     }
 
@@ -193,14 +191,6 @@ const NavItemsContainer = styled.nav`
       span {
         @media screen and (min-width: 960px) {
           background-color: var(--surface-2-container-hover);
-        }
-
-        svg {
-          transform: scale(1.4);
-
-          @media screen and (min-width: 960px) {
-            transform: scale(1.1);
-          }
         }
       }
     }

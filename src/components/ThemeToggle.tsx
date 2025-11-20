@@ -7,7 +7,7 @@ const ThemeToggle: React.FC = () => {
   const { darkMode, toggleMode } = useContext(ThemeContext);
 
   return (
-    <Switcher onClick={toggleMode}>
+    <Switcher onClick={toggleMode} title="Toggle theme">
       {darkMode ? <FaRegSun /> : <FaRegMoon />}
       <span>Turn on {darkMode ? 'light' : 'dark'} mode</span>
     </Switcher>
