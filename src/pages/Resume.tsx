@@ -3,6 +3,7 @@ import { ThemeContext } from '../context/ThemeContext';
 import StickyImageArticle from '../components/StickyImageArticle';
 import Hero from '../components/Hero';
 import PlaceHolder from '../images/placeholder-2.webp';
+import ImageOfMe from '../images/me.png';
 import styled from 'styled-components';
 import FoundationsLight from '../images/foundations-light.jpg';
 import FoundationsDark from '../images/foundations-dark.jpg';
@@ -11,6 +12,11 @@ import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers';
 
 const ResumePage: React.FC = () => {
   const resume = ResumeContent;
+
+  const images = [
+    { src: ImageOfMe, alt: 'Me' },
+    { src: PlaceHolder, alt: 'Placeholder' },
+  ]
 
   const { darkMode } = useContext(ThemeContext);
   const Foundations = darkMode ? FoundationsDark : FoundationsLight;
@@ -22,7 +28,7 @@ const ResumePage: React.FC = () => {
         <br />and key accomplishments in web development.
       </Hero>
       <StickyImageArticle
-        image={<img src={PlaceHolder} alt="Place Holder Image" />}
+        images={images}
       >
         {resume.map((job, i) => (
           <ArticleSection key={`resumeSection${i}`}>

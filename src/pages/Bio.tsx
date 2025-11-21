@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import StickyImageArticle from '../components/StickyImageArticle';
 import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers.tsx';
 import ImageOfMe from '../images/me.png';
+import ImagePlaceholder from '../images/placeholder-2.webp';
 import styled from 'styled-components';
 import StylesDark from '../images/styles-dark.jpg';
 import StylesLight from '../images/styles-light.jpg';
@@ -12,9 +13,10 @@ import { BioContent } from '../data/Bio.tsx';
 
 const BioPage: React.FC = () => {
 
-  const imageStyling = {
-    filter: 'brightness(0.8)',
-  };
+  const images = [
+    { src: ImageOfMe, alt: 'Me' },
+    { src: ImagePlaceholder, alt: 'Placeholder' },
+  ]
 
   const articleContent = BioContent(MyAge(), CodingDuration());
 
@@ -28,7 +30,7 @@ const BioPage: React.FC = () => {
         <br/>and everything inbetween.
       </Hero>
       <StickyImageArticle
-        image={<img src={ImageOfMe} alt="Me" style={imageStyling} />}
+        images={images}
       >
         {articleContent.map((section, i) => (
           <ArticleSection key={`articleSection${i}`}>
