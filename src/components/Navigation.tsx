@@ -176,8 +176,12 @@ const NavItemsContainer = styled.nav`
       transition: all ease 0.2s;
 
       svg {
-        transform: scale(1.6);
+        transform: scale(1.2);
         transition: all ease 0.2s;
+
+        @media screen and (min-width: 960px) {
+          transform: scale(1.6);
+        }
       }
     }
 

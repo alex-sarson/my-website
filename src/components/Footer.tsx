@@ -53,14 +53,14 @@ const FooterContainer = styled.div`
   }
 
   div:first-of-type {
-    margin-left: 20px;
+    margin-left: var(--footer-margin);
   }
 
   div:last-of-type {
     margin-left: 20px;
 
     @media screen and (min-width: 576px) {
-      margin: 0 20px 0 0;
+      margin: 0 calc(4px + var(--footer-margin)) 0 0;
     }
   }
 

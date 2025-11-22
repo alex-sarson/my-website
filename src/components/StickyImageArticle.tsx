@@ -4,6 +4,7 @@ import { useWindowScroll, useWindowSize } from '@uidotdev/usehooks';
 type ImageType = {
   src: string;
   alt: string;
+  styles?: React.CSSProperties;
 };
 
 interface ArticleProps {
@@ -32,7 +33,7 @@ const StickyImageArticle: React.FC<ArticleProps> = ({ children, images }) => {
           const imageSwapPoint = (scrollPerImage + heroHeight) * (index + 1);
           const isVisible = imageStartPoint <= positionOffset && positionOffset <= imageSwapPoint;
           return (
-            <img key={`stickyImage${index}`} src={image.src} alt={image.alt} className={`hide${isVisible ? ' show' : ''}`}/>
+            <img key={`stickyImage${index}`} src={image.src} alt={image.alt} className={`hide${isVisible ? ' show' : ''}`} style={image.styles ?? {}} />
           )
         })}
       </StickyImagesContainer>
@@ -55,6 +56,11 @@ const StickyImagesContainer = styled.div`
   width: 50%;
   margin: 8px 0;
   overflow: hidden;
+  display: none;
+
+  @media screen and (min-width: 960px) {
+    display: block;
+  }
 
   img {
     width: 100%;
@@ -70,7 +76,11 @@ const StickyImagesContainer = styled.div`
   }
 `;
 const ScrollingContentWrapper = styled.div`
-  width: 50%;
+  width: 100%;
+
+  @media screen and (min-width: 960px) {
+    width: 50%;
+  }
 `;
 
 const ScrollingContentContainer = styled.div`

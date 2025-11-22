@@ -2,11 +2,10 @@ import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import StickyImageArticle from '../components/StickyImageArticle';
 import Hero from '../components/Hero';
-import PlaceHolder from '../images/placeholder-2.webp';
-import ImageOfMe from '../images/me.png';
 import styled from 'styled-components';
 import FoundationsLight from '../images/foundations-light.jpg';
 import FoundationsDark from '../images/foundations-dark.jpg';
+import MMPLogo from '../images/mmp-logo.svg';
 import { ResumeContent } from '../data/Resume';
 import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers';
 
@@ -14,8 +13,16 @@ const ResumePage: React.FC = () => {
   const resume = ResumeContent;
 
   const images = [
-    { src: ImageOfMe, alt: 'Me' },
-    { src: PlaceHolder, alt: 'Placeholder' },
+    { 
+      src: MMPLogo, 
+      alt: 'Magdalen Medical Publishing Logo',
+      styles: {
+        objectFit: 'unset' as const,
+        width: '75%',
+        left: '50%',
+        transform: 'translateX(-50%)',
+      }
+    },
   ]
 
   const { darkMode } = useContext(ThemeContext);
@@ -50,7 +57,6 @@ const ResumePage: React.FC = () => {
 
 const ArticleSection = styled.div`
   margin: var(--margin-section);
-  width: 60ch;
 
   h2 {
     line-height: 64px;

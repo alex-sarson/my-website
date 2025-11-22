@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import StickyImageArticle from '../components/StickyImageArticle';
 import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers.tsx';
 import ImageOfMe from '../images/me.png';
-import ImagePlaceholder from '../images/placeholder-2.webp';
+import ImageOfMeAndRyan from '../images/me-and-ryan-at-fish.jpg';
 import styled from 'styled-components';
 import StylesDark from '../images/styles-dark.jpg';
 import StylesLight from '../images/styles-light.jpg';
@@ -15,7 +15,7 @@ const BioPage: React.FC = () => {
 
   const images = [
     { src: ImageOfMe, alt: 'Me' },
-    { src: ImagePlaceholder, alt: 'Placeholder' },
+    { src: ImageOfMeAndRyan, alt: 'Me & Ryan' },
   ]
 
   const articleContent = BioContent(MyAge(), CodingDuration());
@@ -48,7 +48,6 @@ const BioPage: React.FC = () => {
 
 const ArticleSection = styled.div`
   margin: var(--margin-section);
-  width: 60ch;
 
   h2 {
     margin-bottom: 0;
@@ -58,8 +57,8 @@ const ArticleSection = styled.div`
   p,
   h2 {
     margin: 40px;
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: var(--article-margin);
+    margin-right: var(--article-margin);
   }
 
   p:first-of-type {

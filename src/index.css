@@ -19,14 +19,14 @@
   --display-s-font-size: 36px;
   --display-xs-font-size: 24px;
 
-  --menu-item-font-size: 12px;
+  --menu-item-font-size: 16px;
 
   --divider-width: 15px;
-  --divider-margin: 126px auto 0 auto;
+  --divider-margin: 86px auto 0 auto;
 
   --surface-container-border-radius: 18px;
 
-  --spacer-height: 132px;
+  --spacer-height: 0px;
 
   --tile-border-radius: 24px;
   --tile-border-radius-active: 48px;
@@ -35,14 +35,32 @@
   --tile-grid-min-row-height: 320px;
 
   --article-max-width: 1200px;
+  --article-margin: 32px;
+  --footer-margin: 24px;
   --container-max-width: 1760px;
 
   --margin-center: 0 auto;
-  --margin-section: 96px auto 0 auto;
+  --margin-section: 36px auto 0 auto;
   --margin-article: 0 24px;
   --margin-header: 24px;
 
   --mobile-menu-item-border-radius: 24px;
+
+  @media screen and (min-width: 600px) {
+    --footer-margin: 48px;
+  }
+
+  @media screen and (min-width: 960px) {
+    --article-margin: 24px;
+    --footer-margin: 16px;
+
+    --divider-margin: 126px auto 0 auto;
+
+    --margin-section: 96px auto 0 auto;
+    --menu-item-font-size: 12px;
+
+    --spacer-height: 132px;
+  }
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
