@@ -26,7 +26,7 @@ const BioPage: React.FC = () => {
   return (
     <>
       <Hero title="Bio" image={Styles}>
-        The story of Me, how I became a Web Developer,
+        The story of me, how I became a Web Developer,
         <br/>and everything inbetween.
       </Hero>
       <StickyImageArticle
@@ -51,7 +51,6 @@ const ArticleSection = styled.div`
 
   h2 {
     margin-bottom: 0;
-    line-height: 64px;
   }
 
   p,

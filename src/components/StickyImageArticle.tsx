@@ -89,10 +89,6 @@ const ScrollingContentContainer = styled.div`
   width: 100%;
   max-width: 640px;
   margin: 0 auto;
-
-  h2 {
-    font-size: var(--display-l-font-size);
-  }
 `;
 
 export default StickyImageArticle;

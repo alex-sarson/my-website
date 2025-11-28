@@ -9,7 +9,7 @@ export const Tiles = [
     link: '/bio',
     darkImage: bioDarkImage,
     lightImage: bioLightImage,
-    excerpt: 'The part where I tell you a little bit about me.',
+    excerpt: 'The story of me, how I went from being an Architecture student to becoming a Web Developer, and everything inbetween.',
   },
   {
     title: 'Resume',
@@ -17,6 +17,6 @@ export const Tiles = [
     darkImage: resumeDarkImage,
     lightImage: resumeLightImage,
     excerpt:
-      'After graduating with an Architecture degree, I decided that a career in Tech was more suited for me.',
+      'A detailed look at my roles, responsibilities, and key accomplishments in web development.',
   },
 ]

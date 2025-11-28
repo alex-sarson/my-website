@@ -7,7 +7,7 @@ export function BioContent(age: number, codingDuration: number){
         "Hey 👋🏽 I'm Alex, a " +
           age +
           " year old Web Developer living in London. I moved to London in 2023 to expose myself to better opportunites and I love it here, I'm definitely more of a city person. My favourite thing about London is that you can meet people from all walks of life, just walking down a busy street you hear so many different accents!",
-        "In my free time, I enjoy going to the gym four days a week, watching anime (currently One Piece), reading (particularly Sci-Fi; Isaac Asimov is my favourite author), listening to music, and honing my coding skills (I'm currently learning Gleam).",
+        "In my free time, I enjoy going to the gym four days a week, watching anime, reading (particularly Sci-Fi; Isaac Asimov is my favourite author), listening to music, playing Magic the Gathering (and other board and computer games), and honing my coding skills.",
       ],
     },
     {
@@ -23,10 +23,8 @@ export function BioContent(age: number, codingDuration: number){
         "I've been coding for " +
           codingDuration +
           " years now and I love it, especially Front-End development because it scratches the design and making itch that I've always had. One of my favourite aspects of coding is being able to step back and admire the work you've done, It's a very important part of my making process.",
-        'Over these ' +
-          codingDuration +
-          " years I've been writing websites mainly using LAMP or JAM stacks. I've dipped my toes into the world of headless CMS and have been having a long bathe in the waters of WordPress. I much prefer learning new ways to make web applications, React being one of my latest endeavours.",
-        "My drive is always improving on myself, finding ways that I can be a better and more efficient developer. Recently I've taken on the role of Release Manager at my company. As a release manager, I see the role as crucial for establishing and maintaining efficient processes. This responsibility not only ensures smooth releases but also facilitates my growth as a developer by mastering project lifecycle management and enhancing our team's workflow.",
+        "Recently my career has taken me down the path of Full-Stack development. Being able to work on both the client and server sides gives me a broader perspective and allows me to create more cohesive applications. I find it incredibly rewarding to see how the different parts of a project come together to form a complete product.",
+        "My drive is always improving on myself, finding ways that I can be a better and more efficient developer. As part of my introduction to Full-Stack development, I've been diving into containerisation with Docker and learning Linux command line to better understand server environments. As well as exploring cloud services like AWS to enhance my deployment skills. It's an exciting journey, and I'm eager to see where it takes me next!",
       ],
     },
   ];

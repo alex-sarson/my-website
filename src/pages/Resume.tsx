@@ -1,29 +1,16 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import StickyImageArticle from '../components/StickyImageArticle';
 import Hero from '../components/Hero';
 import styled from 'styled-components';
 import FoundationsLight from '../images/foundations-light.jpg';
 import FoundationsDark from '../images/foundations-dark.jpg';
-import MMPLogo from '../images/mmp-logo.svg';
 import { ResumeContent } from '../data/Resume';
 import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers';
+import Article from '../components/Article';
+import Skills from '../components/Skills';
 
 const ResumePage: React.FC = () => {
   const resume = ResumeContent;
-
-  const images = [
-    { 
-      src: MMPLogo, 
-      alt: 'Magdalen Medical Publishing Logo',
-      styles: {
-        objectFit: 'unset' as const,
-        width: '75%',
-        left: '50%',
-        transform: 'translateX(-50%)',
-      }
-    },
-  ]
 
   const { darkMode } = useContext(ThemeContext);
   const Foundations = darkMode ? FoundationsDark : FoundationsLight;
@@ -34,9 +21,7 @@ const ResumePage: React.FC = () => {
         A detailed look at my roles, responsibilities,
         <br />and key accomplishments in web development.
       </Hero>
-      <StickyImageArticle
-        images={images}
-      >
+      <Article>
         {resume.map((job, i) => (
           <ArticleSection key={`resumeSection${i}`}>
             <h2>{job.title}</h2>
@@ -47,28 +32,23 @@ const ResumePage: React.FC = () => {
                 <li key={`responsibility${ri}`}>{resp}</li>
               ))}
             </ul>
+            <Skills skills={job.skills} />
             {resume.length !== i + 1 ? <ArticleDivider /> : <ArticleSpacer />}
           </ArticleSection>
         ))}
-      </StickyImageArticle>
+      </Article>
     </>
   );
 };
 
 const ArticleSection = styled.div`
   margin: var(--margin-section);
-
-  h2 {
-    line-height: 64px;
-  }
-
-  h2,
-  h3 {
-    margin-bottom: 0;
-  }
-
+  display: flex;
+  flex-direction: column;
+  
   h3 {
     margin-top: 16px;
+    margin-bottom: 0;
   }
 
   p,
