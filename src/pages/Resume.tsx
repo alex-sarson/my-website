@@ -1,65 +1,78 @@
-import StickyImageArticle from '../components/StickyImageArticle';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 import Hero from '../components/Hero';
-import PlaceHolder from '../images/placeholder-2.webp';
 import styled from 'styled-components';
-import RedPlant from '../images/red-plant.jpg';
+import FoundationsLight from '../images/foundations-light.jpg';
+import FoundationsDark from '../images/foundations-dark.jpg';
+import { ResumeContent } from '../data/Resume';
+import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers';
+import Article from '../components/Article';
+import Skills from '../components/Skills';
 
 const ResumePage: React.FC = () => {
-  const ArticleContent = [
-    {
-      title: 'First bit of exp',
-      paragraphs: ['Some content here.', 'And here.'],
-    },
-  ];
+  const resume = ResumeContent;
+
+  const { darkMode } = useContext(ThemeContext);
+  const Foundations = darkMode ? FoundationsDark : FoundationsLight;
 
   return (
     <>
-      <Hero title="Resume" image={RedPlant}>
-        This is the copy for the Resume section.
-        <br />I don't really know what to write here yet
+      <Hero title="Resume" image={Foundations}>
+        A detailed look at my roles, responsibilities,
+        <br />and key accomplishments in web development.
       </Hero>
-      <StickyImageArticle
-        image={<img src={PlaceHolder} alt="Place Holder Image" />}
-      >
-        {ArticleContent.map((section, i) => (
-          <ArticleSection key={`articleSection${i}`}>
-            <h2>{section.title}</h2>
-            {section.paragraphs.map((paragraph, pi) => (
-              <p key={`paragraph${pi}`}>{paragraph}</p>
-            ))}
-            {ArticleContent.length !== i + 1 ? <Divider /> : <Spacer />}
+      <Article>
+        {resume.map((job, i) => (
+          <ArticleSection key={`resumeSection${i}`}>
+            <h2>{job.title}</h2>
+            <h3>{job.company}</h3>
+            <p>{job.duration}</p>
+            <ul>
+              {job.responsibilities.map((resp, ri) => (
+                <li key={`responsibility${ri}`}>{resp}</li>
+              ))}
+            </ul>
+            <Skills skills={job.skills} />
+            {resume.length !== i + 1 ? <ArticleDivider /> : <ArticleSpacer />}
           </ArticleSection>
         ))}
-      </StickyImageArticle>
+      </Article>
     </>
   );
 };
 
 const ArticleSection = styled.div`
   margin: var(--margin-section);
-  width: 60ch;
-
-  h2 {
+  display: flex;
+  flex-direction: column;
+  
+  h3 {
+    margin-top: 16px;
     margin-bottom: 0;
   }
 
-  * {
-    margin: 40px;
-    margin-left: 24px;
+  p,
+  ul,
+  h3,
+  h2 {
     margin-right: 24px;
+    margin-left: 24px;
   }
-`;
 
-const Divider = styled.div`
-  height: var(--divider-width);
-  width: var(--divider-width);
-  background-color: var(--surface-container);
-  border-radius: 50%;
-  margin: var(--divider-margin);
-`;
+  p {
+    color: var(--surface-container-text);
+    margin-top: 0;
+  }
 
-const Spacer = styled.div`
-  height: var(--spacer-height);
+  ul {
+    padding-left: 20px;
+    margin-top: 32px;
+
+    li {
+      margin-bottom: 16px;
+    }
+  }
+
 `;
 
 export default ResumePage;

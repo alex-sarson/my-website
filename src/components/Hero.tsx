@@ -24,8 +24,6 @@ const Hero: React.FC<HeroProps> = ({ title, children, image }) => {
 
 const Container = styled.div`
   width: 100%;
-  max-width: var(--container-max-width);
-  margin: 0 auto;
 `;
 
 const Background = styled.div`

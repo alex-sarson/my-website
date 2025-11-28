@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import {
   FaHouseChimney,
   FaReadme,
-  FaCode,
   FaQuoteLeft,
-  FaRegSun,
 } from 'react-icons/fa6';
 import { MdMenuOpen } from 'react-icons/md';
 import React, { Dispatch, SetStateAction } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 interface NavigationProps {
   menuOpen: boolean;
@@ -27,7 +26,7 @@ const NavInternal: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
     { name: 'Home', route: '/', icon: <FaHouseChimney /> },
     { name: 'Bio', route: '/bio', icon: <FaQuoteLeft /> },
     { name: 'Resume', route: '/resume', icon: <FaReadme /> },
-    { name: 'Projects', route: '/projects', icon: <FaCode /> },
+    // { name: 'Projects', route: '/projects', icon: <FaCode /> },
   ];
 
   return (
@@ -38,21 +37,13 @@ const NavInternal: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
           to={item.route}
           className={item.route == route ? 'active' : ''}
           onClick={handleMenu}
+          title={item.name}
         >
           <span>{item.icon}</span>
           <div>{item.name}</div>
         </Link>
       ))}
     </NavItemsContainer>
-  );
-};
-
-const ThemeSwitcher: React.FC = () => {
-  return (
-    <Switcher>
-      <FaRegSun />
-      <span>Turn on light mode</span>
-    </Switcher>
   );
 };
 
@@ -76,14 +67,14 @@ const Navigation: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
 
           <NavInternalContainer>
             <NavInternal menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <ThemeSwitcher />
+            <ThemeToggle />
           </NavInternalContainer>
         </Surface>
       </MobileModal>
 
       <Surface className="desktopSurface">
         <NavInternal menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <ThemeSwitcher />
+        <ThemeToggle />
       </Surface>
     </>
   );
@@ -154,7 +145,7 @@ const NavItemsContainer = styled.nav`
 
   @media screen and (min-width: 960px) {
     margin: 20px 0 0 0;
-    gap: 14px 0;
+    gap: 16px 0;
     width: 88px;
   }
 
@@ -166,6 +157,7 @@ const NavItemsContainer = styled.nav`
     align-items: center;
     height: 48px;
     border-radius: var(--mobile-menu-item-border-radius);
+    font-size: var(--menu-item-font-size);
 
     @media screen and (min-width: 960px) {
       display: block;
@@ -184,11 +176,11 @@ const NavItemsContainer = styled.nav`
       transition: all ease 0.2s;
 
       svg {
-        transform: scale(1.3);
+        transform: scale(1.2);
         transition: all ease 0.2s;
 
         @media screen and (min-width: 960px) {
-          transform: scale(1);
+          transform: scale(1.6);
         }
       }
     }
@@ -203,14 +195,6 @@ const NavItemsContainer = styled.nav`
       span {
         @media screen and (min-width: 960px) {
           background-color: var(--surface-2-container-hover);
-        }
-
-        svg {
-          transform: scale(1.4);
-
-          @media screen and (min-width: 960px) {
-            transform: scale(1.1);
-          }
         }
       }
     }
@@ -243,40 +227,6 @@ const NavItemsContainer = styled.nav`
         }
       }
     }
-  }
-`;
-
-const Switcher = styled.button`
-  margin: 0 auto 20px;
-  text-align: left;
-  height: 48px;
-  border-radius: var(--mobile-menu-item-border-radius);
-  background-color: transparent;
-  border: 1px solid var(--surface-container-text);
-  color: var(--surface-container-text);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  @media screen and (min-width: 960px) {
-    border-radius: 50%;
-    width: 48px;
-    padding: 0;
-    justify-content: center;
-  }
-
-  svg {
-    transform: scale(1.2);
-  }
-
-  span {
-    @media screen and (min-width: 960px) {
-      display: none;
-    }
-  }
-
-  &:hover {
-    background-color: var(--surface-2-container-hover);
   }
 `;
 
