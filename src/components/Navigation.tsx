@@ -70,6 +70,7 @@ const Navigation: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
             <ThemeToggle />
           </NavInternalContainer>
         </Surface>
+        <DeadSpace onClick={handleMenu} className='deadspace'/>
       </MobileModal>
 
       <Surface className="desktopSurface">
@@ -81,20 +82,24 @@ const Navigation: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
 };
 
 const MobileModal = styled.div`
-  display: none;
+  display: flex;
+  flex-direction: row;
   height: 100%;
   width: 100%;
   position: fixed;
-  background-color: var(--scrim);
   z-index: 1;
-  opacity: 0;
+  pointer-events: none;
 
   &.mobileMenuOpen {
-    display: block;
     opacity: 1;
+    pointer-events: auto;
 
-    & > div {
-      left: 0;
+    .mobileSurface {
+      transform: translateX(0);
+    }
+
+    .deadspace {
+      opacity: 1;
     }
   }
 
@@ -106,6 +111,13 @@ const MobileModal = styled.div`
   }
 `;
 
+const DeadSpace = styled.div`
+  flex-grow: 1;
+  background-color: var(--scrim);
+  opacity: 0;
+  transition: opacity 300ms cubic-bezier(0.2, 0, 0, 1);
+`;
+
 const Surface = styled.div`
   background-color: var(--surface-2);
   position: fixed;
@@ -113,7 +125,7 @@ const Surface = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  left: -320px;
+  transform: translateX(-100%);
   width: 320px;
   border-top-right-radius: var(--surface-container-border-radius);
   border-bottom-right-radius: var(--surface-container-border-radius);
@@ -127,6 +139,9 @@ const Surface = styled.div`
 
   &.mobileSurface {
     box-shadow: var(--mobile-menu-box-shadow);
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
   }
 `;
 

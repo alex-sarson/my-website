@@ -82,6 +82,8 @@ html {
   &[data-theme='light'] {
     --theme-colour-primary: #cbbeff;
 
+    --scrim: #00000052;
+
     --surface-text: #1c1b1d;
     --surface-container-text: #4d4256;
     --surface-container-text-hover: #322b38;
