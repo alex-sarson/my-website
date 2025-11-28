@@ -131,7 +131,7 @@ const Surface = styled.div`
   border-bottom-right-radius: var(--surface-container-border-radius);
 
   @media screen and (min-width: 960px) {
-    left: 0;
+    transform: none;
     width: auto;
     border-radius: 0;
     justify-content: space-between;
