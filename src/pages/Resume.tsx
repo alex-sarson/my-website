@@ -8,18 +8,19 @@ import { ResumeContent } from '../data/Resume';
 import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers';
 import Article from '../components/Article';
 import Skills from '../components/Skills';
-import Title from '../components/Title';
+import Seo from '../components/Seo';
 
 const ResumePage: React.FC = () => {
   const resume = ResumeContent;
   const title = 'Resume';
+  const description = 'A detailed look at my roles, responsibilities, and key accomplishments in web development.';
 
   const { darkMode } = useContext(ThemeContext);
   const Foundations = darkMode ? FoundationsDark : FoundationsLight;
 
   return (
     <>
-      <Title pageTitle={title} />
+      <Seo title={title} description={description} slug="resume" />
       <Hero title="Resume" image={Foundations}>
         A detailed look at my roles, responsibilities,
         <br />and key accomplishments in web development.
