@@ -16,7 +16,6 @@ const StickyImageArticle: React.FC<ArticleProps> = ({ children, images }) => {
   const bodyHeight = document.body.offsetHeight;
   const [{ y }] = useWindowScroll();
   const {height: windowHeight } = useWindowSize();
-  const isLocalHost = window.location.hostname === 'localhost';
 
   return (
     <Container>
@@ -36,18 +35,11 @@ const StickyImageArticle: React.FC<ArticleProps> = ({ children, images }) => {
           const imageName = image.src
             .replace(/^\/src\/images\//, '')
             .replace(/\.[^/.]+$/, '');
-
-          const localSrcSet = `
-            /src/images/resized/480/${imageName}-480w.webp 480w,
-            /src/images/resized/800/${imageName}-800w.webp 800w,
-            /src/images/resized/1200/${imageName}-1200w.webp 1200w,
-            /src/images/resized/1400/${imageName}-1400w.webp 1400w
-          `;
           const srcSet = `
-            ${imageName}-480w.webp 480w,
-            ${imageName}-800w.webp 800w,
-            ${imageName}-1200w.webp 1200w,
-            ${imageName}-1400w.webp 1400w
+            /resized/480/${imageName}-480w.webp 480w,
+            /resized/800/${imageName}-800w.webp 800w,
+            /resized/1200/${imageName}-1200w.webp 1200w,
+            /resized/1400/${imageName}-1400w.webp 1400w
           `;
 
 
@@ -58,7 +50,7 @@ const StickyImageArticle: React.FC<ArticleProps> = ({ children, images }) => {
               alt={image.alt} 
               className={`hide${isVisible ? ' show' : ''}`} 
               style={image.styles ?? {}}
-              srcSet={isLocalHost ? localSrcSet : srcSet}
+              srcSet={srcSet}
               sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, 1400px"
             />
           )
