@@ -19,7 +19,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
 
   return (
     <Surface>
-      <Burger onClick={handleMenu} className="mobileMenu-button">
+      <Burger onClick={handleMenu} className="mobileMenu-button" aria-label="Open menu">
         <MdMenu />
       </Burger>
       <Link to={'/'}>

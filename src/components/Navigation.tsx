@@ -60,7 +60,7 @@ const Navigation: React.FC<NavigationProps> = ({ menuOpen, setMenuOpen }) => {
       <MobileModal className={menuOpen ? 'mobileMenuOpen' : ''}>
         <Surface className="mobileSurface">
           <BurgerContainer>
-            <Burger onClick={handleMenu} className="mobileMenu-button">
+            <Burger onClick={handleMenu} className="mobileMenu-button" aria-label="Close menu">
               <MdMenuOpen />
             </Burger>
           </BurgerContainer>
