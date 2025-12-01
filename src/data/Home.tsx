@@ -1,7 +1,7 @@
-import bioDarkImage from '../images/red-plant.jpg';
-import bioLightImage from '../images/pink-plant.jpg';
-import resumeDarkImage from '../images/develop-dark.jpg';
-import resumeLightImage from '../images/develop-light.jpg';
+import bioDarkImage from '../images/red-plant.webp';
+import bioLightImage from '../images/pink-plant.webp';
+import resumeDarkImage from '../images/develop-dark.webp';
+import resumeLightImage from '../images/develop-light.webp';
 
 export const Tiles = [
   {

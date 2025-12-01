@@ -1,5 +1,5 @@
 import Hero from '../components/Hero';
-import Petals from '../images/petals.png';
+import Petals from '../images/petals.webp';
 
 const Projects: React.FC = () => {
   return (
