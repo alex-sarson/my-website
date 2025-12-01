@@ -10,6 +10,7 @@ import StylesDark from '../images/styles-dark.jpg';
 import StylesLight from '../images/styles-light.jpg';
 import { CodingDuration, MyAge } from '../utils/Dates.tsx';
 import { BioContent } from '../data/Bio.tsx';
+import Title from '../components/Title.tsx';
 
 const BioPage: React.FC = () => {
 
@@ -23,8 +24,11 @@ const BioPage: React.FC = () => {
   const { darkMode } = useContext(ThemeContext);
   const Styles = darkMode ? StylesDark : StylesLight;
 
+  const title = 'Bio';
+
   return (
     <>
+      <Title pageTitle={title} />
       <Hero title="Bio" image={Styles}>
         The story of me, how I became a Web Developer,
         <br/>and everything inbetween.
