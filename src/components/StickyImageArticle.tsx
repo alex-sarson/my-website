@@ -32,8 +32,26 @@ const StickyImageArticle: React.FC<ArticleProps> = ({ children, images }) => {
           const imageStartPoint = index == 0 ? scrollPerImage * index : (scrollPerImage + heroHeight) * index;
           const imageSwapPoint = (scrollPerImage + heroHeight) * (index + 1);
           const isVisible = imageStartPoint <= positionOffset && positionOffset <= imageSwapPoint;
+          const imageName = image.src
+            .replace(/^\/src\/images\//, '')
+            .replace(/\.[^/.]+$/, '');
+
+
           return (
-            <img key={`stickyImage${index}`} src={image.src} alt={image.alt} className={`hide${isVisible ? ' show' : ''}`} style={image.styles ?? {}} />
+            <img 
+              key={`stickyImage${index}`} 
+              src={image.src} 
+              alt={image.alt} 
+              className={`hide${isVisible ? ' show' : ''}`} 
+              style={image.styles ?? {}}
+              srcSet={
+                `/src/images/resized/480/${imageName}-480w.webp 480w,
+                /src/images/resized/800/${imageName}-800w.webp 800w,
+                /src/images/resized/1200/${imageName}-1200w.webp 1200w,
+                /src/images/resized/1400/${imageName}-1400w.webp 1400w`
+              }
+              sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, 1400px"
+            />
           )
         })}
       </StickyImagesContainer>

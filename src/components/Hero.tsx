@@ -7,16 +7,25 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ title, children, image }) => {
-  const backgroundStyles = {
-    backgroundImage: `url(${image})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-  };
+  const imageName = image
+    .replace(/^\/src\/images\//, '')
+    .replace(/\.[^/.]+$/, '');
   return (
     <Container>
-      <Background style={backgroundStyles}>
+      <Background>
         <h1>{title}</h1>
-        {children}
+        <p>{children}</p>
+        <img 
+          src={image} 
+          alt={`${title} Background`}
+          srcSet={
+            `/src/images/resized/480/${imageName}-480w.webp 480w,
+            /src/images/resized/800/${imageName}-800w.webp 800w,
+            /src/images/resized/1200/${imageName}-1200w.webp 1200w,
+            /src/images/resized/1400/${imageName}-1400w.webp 1400w`
+          }
+          sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, 1400px"
+        />
       </Background>
     </Container>
   );
@@ -50,7 +59,14 @@ const Background = styled.div`
 
   p {
     max-width: 60ch;
-    margin-bottom: 0;
+    margin: 0;
+  }
+
+  h1,
+  h3,
+  p {
+    position: relative;
+    z-index: 2;
   }
 
   img {
@@ -58,17 +74,10 @@ const Background = styled.div`
     height: 100%;
     right: 0;
     top: 0;
-
-    &:before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      background-color: var(--surface-container);
-      border: solid 2px pink;
-      width: 20px;
-      left: 0;
-      top: 0;
-    }
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 `;
 
