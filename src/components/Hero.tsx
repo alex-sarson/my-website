@@ -83,6 +83,7 @@ const Background = styled.div`
     left: 0;
     width: 100%;
     object-fit: cover;
+    object-position: top;
     z-index: 0;
   }
 `;
