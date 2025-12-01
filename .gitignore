@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # System Files
-resizer.sh
+*.sh
