@@ -13,7 +13,7 @@ const Home: React.FC = () => {
   const description = "I'm Alex Sarson, a self taught Web Developer based in London, UK. I love learning new things, solving problems and creating beautiful websites!";
   return (
     <>
-      <Seo title={title} description={description} slug="home" />
+      <Seo title={title} description={description} />
       <Hero title="Hello" image={Plant}>
         I'm Alex Sarson, a self taught Web Developer based in London, UK.
         <br />I love learning new things, solving problems and creating
@@ -21,7 +21,6 @@ const Home: React.FC = () => {
       </Hero>
       <article>
         <AboutSection />
-        {/* <PortfolioSection /> */}
       </article>
     </>
   );
