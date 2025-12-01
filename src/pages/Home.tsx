@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import PetalsLight from '../images/petals-light.png';
-import PetalsDark from '../images/petals.png';
+import PetalsLight from '../images/petals-light.webp';
+import PetalsDark from '../images/petals.webp';
 import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import Seo from '../components/Seo';

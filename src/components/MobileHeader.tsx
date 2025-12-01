@@ -19,7 +19,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
 
   return (
     <Surface>
-      <Burger onClick={handleMenu} className="mobileMenu-button">
+      <Burger onClick={handleMenu} className="mobileMenu-button" aria-label="Open menu">
         <MdMenu />
       </Burger>
       <Link to={'/'}>
@@ -34,7 +34,7 @@ const Surface = styled.header`
   width: 100%;
   background-color: var(--surface-mobile-header);
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   font-size: 16px;
   display: flex;
   align-items: center;

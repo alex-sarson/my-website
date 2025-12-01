@@ -1,5 +1,5 @@
 import {Helmet} from 'react-helmet';
-import Me from '../images/me.png';
+import Me from '../images/me.webp';
 
 interface SeoProps {
   title: string;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Hero from '../components/Hero';
-import RedPlant from '../images/red-plant.jpg';
-import PinkPlant from '../images/pink-plant.jpg';
+import RedPlant from '../images/red-plant.webp';
+import PinkPlant from '../images/pink-plant.webp';
 import { ThemeContext } from '../context/ThemeContext';
 import Seo from '../components/Seo';
 
