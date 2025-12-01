@@ -34,7 +34,10 @@ const StickyImageArticle: React.FC<ArticleProps> = ({ children, images }) => {
           const isVisible = imageStartPoint <= positionOffset && positionOffset <= imageSwapPoint;
           const imageName = image.src
             .replace(/^\/src\/images\//, '')
-            .replace(/\.[^/.]+$/, '');
+            .replace(/^\/assets\//, '')
+            .replace(/\.[^/.]+$/, '')
+            .replace(/-[a-f0-9]+$/, '');  // Remove hash suffix
+
           const srcSet = `
             /resized/480/${imageName}-480w.webp 480w,
             /resized/800/${imageName}-800w.webp 800w,
