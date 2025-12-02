@@ -90,6 +90,6 @@ const StyledImage = styled.img`
 
   &[data-loaded='true'] {
     filter: blur(0);
-    transition: filter 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
 `;
