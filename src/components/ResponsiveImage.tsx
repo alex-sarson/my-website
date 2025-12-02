@@ -3,19 +3,59 @@ import styled from "styled-components";
 
 interface ResponsiveImageProps {
   image: string;
-  title: string;
   style?: React.CSSProperties;
   className?: string;
   key?: string;
+  title?: string;
 }
 
 const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ image, title, style, className, key }) => {
-  const [loaded, setLoaded] = useState(false);
   const imageName = image
     .replace(/^\/src\/images\//, '')
     .replace(/^\/assets\//, '')
     .replace(/\.[^/.]+$/, '')
-    .replace(/-[a-f0-9]+$/, '');  // Remove hash suffix
+    .replace(/-[a-f0-9]+$/, '');
+
+  const storageKey = `img-loaded-${imageName}`;
+  const sizeStorageKey = `img-size-${imageName}`;
+  const [loaded, setLoaded] = useState(() => {
+    try {
+      return localStorage.getItem(storageKey) === 'true';
+    } catch {
+      return false;
+    }
+  });
+  const [selectedSize, setSelectedSize] = useState(() => {
+    try {
+      return localStorage.getItem(sizeStorageKey) || '480';
+    } catch {
+      return '480';
+    }
+  });
+
+  const handleLoad = () => {
+    setLoaded(true);
+    try {
+      localStorage.setItem(storageKey, 'true');
+    } catch (e) {
+      // Ignore localStorage errors
+    }
+  };
+
+  const handleSrcSet = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    const src = img.currentSrc;
+    const match = src.match(/\/resized\/(\d+)\//);
+    if (match) {
+      const size = match[1];
+      setSelectedSize(size);
+      try {
+        localStorage.setItem(sizeStorageKey, size);
+      } catch (e) {
+        // Ignore localStorage errors
+      }
+    }
+  };
 
   const srcSet = `
     /resized/480/${imageName}-480w.webp 480w,
@@ -27,14 +67,15 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ image, title, style, 
 
   return (
     <StyledImage 
-      src={`/resized/480/${imageName}-480w.webp`}
-      alt={title}
+      src={`/resized/${selectedSize}/${imageName}-${selectedSize}w.webp`}
       srcSet={srcSet}
       style={style}
+      alt={title}
       className={className}
       key={key}
       sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, (max-width: 1600px) 1400px, 2000px"
-      onLoad={() => setLoaded(true)}
+      onLoad={handleLoad}
+      onLoadedMetadata={handleSrcSet}
       data-loaded={loaded}
     />
   );
@@ -49,6 +90,6 @@ const StyledImage = styled.img`
 
   &[data-loaded='true'] {
     filter: blur(0);
-    transition: filter 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
-`
+`;

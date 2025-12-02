@@ -76,7 +76,6 @@ const StickyImagesContainer = styled.div`
     object-fit: cover;
     position: absolute;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 
     &.show {
       opacity: 1;
