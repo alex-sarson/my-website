@@ -16,7 +16,6 @@ const Hero: React.FC<HeroProps> = ({ title, children, image }) => {
         <p>{children}</p>
         <ResponsiveImage
           image={image}
-          title={`${title} Background`}
         />
       </Background>
     </Container>

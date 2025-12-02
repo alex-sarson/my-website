@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 interface ResponsiveImageProps {
   image: string;
-  title: string;
   style?: React.CSSProperties;
   className?: string;
   key?: string;
+  title?: string;
 }
 
 const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ image, title, style, className, key }) => {
@@ -68,9 +68,9 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ image, title, style, 
   return (
     <StyledImage 
       src={`/resized/${selectedSize}/${imageName}-${selectedSize}w.webp`}
-      alt={title}
       srcSet={srcSet}
       style={style}
+      alt={title}
       className={className}
       key={key}
       sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, (max-width: 1600px) 1400px, 2000px"
