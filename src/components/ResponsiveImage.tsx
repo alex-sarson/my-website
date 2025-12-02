@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 interface ResponsiveImageProps {
@@ -9,6 +10,7 @@ interface ResponsiveImageProps {
 }
 
 const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ image, title, style, className, key }) => {
+  const [loaded, setLoaded] = useState(false);
   const imageName = image
     .replace(/^\/src\/images\//, '')
     .replace(/^\/assets\//, '')
@@ -25,13 +27,15 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ image, title, style, 
 
   return (
     <StyledImage 
-      src={image}
+      src={`/resized/480/${imageName}-480w.webp`}
       alt={title}
       srcSet={srcSet}
       style={style}
       className={className}
       key={key}
       sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, (max-width: 1600px) 1400px, 2000px"
+      onLoad={() => setLoaded(true)}
+      data-loaded={loaded}
     />
   );
 };
