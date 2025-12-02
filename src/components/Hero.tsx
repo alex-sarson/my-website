@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ResponsiveImage from './ResponsiveImage';
 
 interface HeroProps {
   title: string;
@@ -7,30 +8,15 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ title, children, image }) => {
-  const imageName = image
-    .replace(/^\/src\/images\//, '')
-    .replace(/^\/assets\//, '')
-    .replace(/\.[^/.]+$/, '')
-    .replace(/-[a-f0-9]+$/, '');  // Remove hash suffix
-
-  const srcSet = `
-    /resized/480/${imageName}-480w.webp 480w,
-    /resized/800/${imageName}-800w.webp 800w,
-    /resized/1200/${imageName}-1200w.webp 1200w,
-    /resized/1400/${imageName}-1400w.webp 1400w,
-    /resized/2000/${imageName}-2000w.webp 2000w
-  `;
 
   return (
     <Container>
       <Background>
         <h1>{title}</h1>
         <p>{children}</p>
-        <img 
-          src={image} 
-          alt={`${title} Background`}
-          srcSet={srcSet}
-          sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, (max-width: 1400px) 1200px, (max-width: 1600px) 1400px, 2000px"
+        <ResponsiveImage
+          image={image}
+          title={`${title} Background`}
         />
       </Background>
     </Container>
