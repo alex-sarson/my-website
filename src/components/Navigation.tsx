@@ -87,7 +87,7 @@ const MobileModal = styled.div`
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   pointer-events: none;
 
   &.mobileMenuOpen {
