@@ -4,61 +4,103 @@ type ResumeEntry = {
   duration: string;
   responsibilities: string[];
   skills?: string[];
-}
+};
+
+export const ResumeSummary: string = `Senior Web Developer with 5+ years of experience specializing in React, TypeScript, and modern Front-End architectures. I am a highly motivated self-starter who transitioned into software engineering by teaching myself to code in HTML, CSS, JavaScript, and PHP. Known as a proactive "doer," I am always eager to learn new technologies and am quick to jump on any task, particularly when it comes to identifying and resolving bugs to drive platform performance. Expert in leading full-stack re-developments using Gatsby and React, with a focus on technical debt reduction, Core Web Vitals, and enhancing the overall User Experience.`;
 
 export const ResumeContent: ResumeEntry[] = [
   {
-    title: 'Senior Web Developer',
-    company: 'Magdalen Medical Publishing',
-    duration: 'August 2024 - Present',
+    title: "Senior Web Developer",
+    company: "Magdalen Medical Publishing",
+    duration: "August 2024 - Present",
     responsibilities: [
-      'Developed platform authentication (React/Vite), securing and standardizing user data collection via micro-services.',
-      'Line managed and mentored one Junior Developer, overseeing their technical growth and performance, and ensuring high standards for team code quality.',
-      'Managed and executed a full website re-development (React/GatsbyJS), delivering a complete UI refresh that increased supporter engagement and reduced bounce rate.',
-      'Enhanced Disaster Recovery Planning (DRP) by implementing Terraform scripts for infrastructure-as-code, mitigating business risk by reducing potential recovery time.'
+      "Led the full-stack re-development of the company website using React and GatsbyJS, delivering a UI refresh that significantly reduced bounce rates and increased supporter engagement.",
+      "Converted GraphQL queries to MySQL queries to improve search indexer microservice performance from 20 minutes to 2 minutes, allowing for more frequent index refreshes and improved user retention.",
+      "Developed platform authentication systems using React and Vite, securing and standardizing user data collection via microservices.",
+      "Introduced Infrastructure-as-Code (IaC) using Terraform and Bash scripts to automate cloud management and enhance disaster recovery procedures.",
+      "Provided WordPress & Payload CMS training for internal staff to ensure content management efficiency.",
+      "Line managed and mentored a Junior Developer, overseeing technical growth and maintaining high standards for team code quality.",
+      "Continue to perform the role of Release Manager, taking full ownership of production environments.",
+      "Delivered 5 more high-performance brochure websites built with the Gatsby framework and React.",
+      "Developed a manual build trigger from WordPress to Netlify using webhooks, for content management teams to use to reduce overall credit expenditure by 90% following a change in Netlify’s billing plan.",
     ],
     skills: [
-      'React', 'GatsbyJS', 'TypeScript', 'JavaScript', 'SASS/SCSS', 'Docker', 'Git', 'AWS', 'Terraform', 'REST APIs', 'PHP', 'MySQL'
-    ]
+      "React",
+      "GatsbyJS",
+      "TypeScript",
+      "JavaScript",
+      "SASS/SCSS",
+      "Docker",
+      "Git",
+      "AWS",
+      "Terraform",
+      "REST APIs",
+      "PHP",
+      "MySQL",
+    ],
   },
   {
-    title: 'Web Developer',
-    company : 'Magdalen Medical Publishing',
-    duration: 'August 2023 - August 2024',
+    title: "Web Developer",
+    company: "Magdalen Medical Publishing",
+    duration: "August 2023 - August 2024",
     responsibilities: [
-      'Delivered 7 high-performance brochure websites (React/GatsbyJS) under strict deadlines, directly contributing to increased event registrations and successful supporter campaigns.',
-      'Acted as Release Manager , standardizing version control via Gitflow methodologies which reduced release cycle time and deployment errors.',
-      'Containerised 6 journal sites using Docker, standardizing the multi-site deployment process and improving local development environment setup.'
+      "Successfully delivered 7 high-performance, SEO-optimized brochure websites utilizing the Gatsby framework and React.",
+      "Acted as the primary technical point of contact for departmental heads, translating complex business requirements into actionable front-end feature requests and UI enhancements.",
+      "Spearheaded the role of Release Manager, implementing Gitflow methodologies to standardize version control, which directly reduced deployment errors and accelerated the release cycle.",
+      "Modernized the deployment pipeline by containerizing 6 major journal sites using Docker, enabling consistent multi-site environments across AWS ECS instances.",
     ],
     skills: [
-      'React', 'GatsbyJS', 'JavaScript', 'SASS/SCSS', 'Docker', 'Git', 'AWS', 'PHP', 'MySQL', 'GraphQL'
-    ]
+      "React",
+      "GatsbyJS",
+      "JavaScript",
+      "SASS/SCSS",
+      "Docker",
+      "Git",
+      "AWS",
+      "PHP",
+      "MySQL",
+      "GraphQL",
+    ],
   },
   {
-    title: 'Junior Web Developer',
-    company : 'Magdalen Medical Publishing',
-    duration: 'June 2022 - August 2023',
+    title: "Junior Web Developer",
+    company: "Magdalen Medical Publishing",
+    duration: "June 2022 - August 2023",
     responsibilities: [
-      'Collaborated with cross-functional teams to implement new website features on LAMP stack websites.',
-      'Handled bug fixes and issue resolution, improving website performance and user experience.',
-      'Key achievement was learning and utilizing GatsbyJS and ReactJS as part of a significant iw website redevelopment project, enhancing professional skills.'
+      "Maintained and optimized 6 core WordPress websites on a LAMP stack, ensuring 100% uptime and business continuity for legacy systems.",
+      "Collaborated within cross-functional teams to design and deploy new front-end features, focusing on improving the user experience for medical researchers.",
+      "Utilized Git for rigorous version control, ensuring a transparent and collaborative coding environment during the transition to more modern frameworks.",
     ],
     skills: [
-      'React', 'GatsbyJS', 'JavaScript', 'Git', 'PHP', 'MySQL', 'GraphQL', 'WordPress', 'SASS/SCSS'
-    ]
+      "React",
+      "GatsbyJS",
+      "JavaScript",
+      "Git",
+      "PHP",
+      "MySQL",
+      "GraphQL",
+      "WordPress",
+      "SASS/SCSS",
+    ],
   },
   {
-    title: 'Web Development Manager',
-    company: 'LEAD IT Services',
-    duration: 'January 2022 - June 2022',
+    title: "Web Development Manager",
+    company: "LEAD IT Services",
+    duration: "January 2022 - June 2022",
     responsibilities: [
-      'Managed and developed websites for the L.E.A.D. Academy Trust schools, external schools, and cubowork.com',
-      'Developed custom plugins for the WordPress CMS admin panel to increase efficiency.',
-      'Plugin development skills utilized PHP, HTML, CSS, and JavaScript, focusing on custom post types to create simple admin forms and render frontend elements like buttons with modals or accordions.',
-      'Developed a specific vacancy plugin that displayed posts chronologically, automatically changing the post status from \'published\' to \'draft\' (removing it from the frontend) once a pre-set \'end date\' was reached.'
+      "Independently managed and maintained a portfolio of 20+ school websites, utilizing a core stack of HTML, PHP, JavaScript, and CSS to ensure high availability and performance.",
+      "Architected and deployed an automated marketing lead orchestration system using Microsoft Power Automate, converting inbound contact form emails into actionable leads within the Cubo marketing platform.",
+      'Spearheaded emergency disaster recovery efforts for an external Academy Trust following a widespread "anonymousfox" security breach; successfully remediated multiple defaced websites by patching critical Joomla exploits.',
+      "Provided high-touch technical consultancy and on-site support for educational institutions, ensuring seamless operation of digital assets and infrastructure.",
     ],
-    skills: [
-      'PHP', 'JavaScript', 'HTML', 'CSS', 'WordPress'
-    ]
-  }
-]
+    skills: ["PHP", "JavaScript", "HTML", "CSS", "WordPress"],
+  },
+  {
+    title: "IT Support Technician",
+    company: "LEAD IT Services",
+    duration: "August 2019 - January 2022",
+    responsibilities: [
+      "Transitioned from an architecture background to a technical role, providing user assistance while teaching myself to code HTML, CSS, JavaScript, and PHP to enhance school websites.",
+    ],
+  },
+];
