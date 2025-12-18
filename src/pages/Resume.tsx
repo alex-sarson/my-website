@@ -1,19 +1,21 @@
-import { useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
-import Hero from '../components/Hero';
-import styled from 'styled-components';
-import FoundationsLight from '../images/foundations-light.webp';
-import FoundationsDark from '../images/foundations-dark.webp';
-import { ResumeContent } from '../data/Resume';
-import { ArticleDivider, ArticleSpacer } from '../components/ArticleSpacers';
-import Article from '../components/Article';
-import Skills from '../components/Skills';
-import Seo from '../components/Seo';
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
+import Hero from "../components/Hero";
+import styled from "styled-components";
+import FoundationsLight from "../images/foundations-light.webp";
+import FoundationsDark from "../images/foundations-dark.webp";
+import { ResumeContent, ResumeSummary } from "../data/Resume";
+import { ArticleDivider, ArticleSpacer } from "../components/ArticleSpacers";
+import Article from "../components/Article";
+import Skills from "../components/Skills";
+import Seo from "../components/Seo";
 
 const ResumePage: React.FC = () => {
   const resume = ResumeContent;
-  const title = 'Resume';
-  const description = 'A detailed look at my roles, responsibilities, and key accomplishments in web development.';
+  const summary = ResumeSummary;
+  const title = "Resume";
+  const description =
+    "A detailed look at my roles, responsibilities, and key accomplishments in web development.";
 
   const { darkMode } = useContext(ThemeContext);
   const Foundations = darkMode ? FoundationsDark : FoundationsLight;
@@ -23,9 +25,14 @@ const ResumePage: React.FC = () => {
       <Seo title={title} description={description} slug="resume" />
       <Hero title="Resume" image={Foundations}>
         A detailed look at my roles, responsibilities,
-        <br />and key accomplishments in web development.
+        <br />
+        and key accomplishments in web development.
       </Hero>
       <Article>
+        <ArticleSection>
+          <h2>Summary</h2>
+          <p className="summary">{summary}</p>
+        </ArticleSection>
         {resume.map((job, i) => (
           <ArticleSection key={`resumeSection${i}`}>
             <h2>{job.title}</h2>
@@ -49,7 +56,7 @@ const ArticleSection = styled.div`
   margin: var(--margin-section);
   display: flex;
   flex-direction: column;
-  
+
   h3 {
     margin-top: 16px;
     margin-bottom: 0;
@@ -63,7 +70,7 @@ const ArticleSection = styled.div`
     margin-left: 24px;
   }
 
-  p {
+  p:not(.summary) {
     color: var(--surface-container-text);
     margin-top: 0;
   }
@@ -76,7 +83,6 @@ const ArticleSection = styled.div`
       margin-bottom: 16px;
     }
   }
-
 `;
 
 export default ResumePage;
